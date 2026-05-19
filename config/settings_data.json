@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "",
-    "logo_width": 150,
+    "logo": "shopify://shop_images/GiftMira_Logo.png",
+    "logo_width": 300,
     "favicon": "",
     "type_header_font": "garamond_n4",
     "heading_scale": 125,
@@ -204,12 +204,27 @@
     "pluginseo_pageTitleIndexTemplate": "",
     "pluginseo_structuredDataLogo": "",
     "pluginseo_structuredDataSocialProfileLinks": "",
+    "sections": {
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "color_scheme": "scheme-1"
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {
+          "color_scheme": "scheme-1"
+        }
+      }
+    },
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
           "background": "#faf8f1",
           "background_gradient": "",
-          "text": "#2A2018",
+          "text": "#2a2018",
           "button": "#ff6b6b",
           "button_label": "#ffffff",
           "secondary_button_label": "#ff6b6b",
@@ -220,7 +235,7 @@
         "settings": {
           "background": "#fbefcc",
           "background_gradient": "",
-          "text": "#2A2018",
+          "text": "#2a2018",
           "button": "#ff6b6b",
           "button_label": "#faf8f1",
           "secondary_button_label": "#ff6b6b",
@@ -240,20 +255,20 @@
       },
       "scheme-4": {
         "settings": {
-          "background": "#2A2018",
+          "background": "#2a2018",
           "background_gradient": "",
-          "text": "#FAF8F1",
-          "button": "#FF6B6B",
+          "text": "#faf8f1",
+          "button": "#ff6b6b",
           "button_label": "#ffffff",
-          "secondary_button_label": "#FF6B6B",
+          "secondary_button_label": "#ff6b6b",
           "shadow": "#121212"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#D4A853",
+          "background": "#d4a853",
           "background_gradient": "",
-          "text": "#2A2018",
+          "text": "#2a2018",
           "button": "#ffffff",
           "button_label": "#baffc9",
           "secondary_button_label": "#ffffff",
@@ -315,22 +330,7 @@
           "shadow": "#121212"
         }
       }
-    },
-    "sections": {
-      "main-password-header": {
-        "type": "main-password-header",
-        "settings": {
-          "color_scheme": "scheme-1"
-        }
-      },
-      "main-password-footer": {
-        "type": "main-password-footer",
-        "settings": {
-          "color_scheme": "scheme-1"
-        }
-      }
-    },
-    "content_for_index": []
+    }
   },
   "presets": {
     "Dawn": {
