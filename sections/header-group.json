@@ -1,1 +1,81 @@
-{"name": "t:sections.header.name", "type": "header", "sections": {"announcement-bar": {"type": "announcement-bar", "blocks": {"countdown_8aEjYJ": {"type": "countdown", "settings": {"prefix_text": "\ud83e\ude77 Mother's Day Sale ends in", "end_month": "5", "end_day": "10", "end_year": "2026", "link": "shopify://collections/mothers-day-gifts"}}, "announcement_KHcbKX": {"type": "announcement", "settings": {"text": "\ud83c\udfd5\ufe0f Adventure gear on sale for 2 weeks \u2014 helmets, paddles, slippers & more \u2192", "link": "shopify://collections"}}, "announcement-bar-0": {"type": "announcement", "settings": {"text": "\ud83c\udf81 Warning: You\u2019re about to become everyone\u2019s favorite gift-giver.", "link": "shopify://pages/gift-finder"}}}, "block_order": ["countdown_8aEjYJ", "announcement_KHcbKX", "announcement-bar-0"], "settings": {"auto_rotate": false, "change_slides_speed": 5, "color_scheme": "scheme-1", "show_line_separator": true, "show_social": false, "enable_country_selector": false, "enable_language_selector": false}}, "header": {"type": "header", "settings": {"logo_position": "middle-center", "mobile_logo_position": "center", "menu": "main-menu", "menu_type_desktop": "mega", "sticky_header_type": "on-scroll-up", "show_line_separator": true, "color_scheme": "scheme-1", "menu_color_scheme": "scheme-1", "enable_country_selector": false, "enable_language_selector": false, "enable_customer_avatar": true, "margin_bottom": 0, "padding_top": 20, "padding_bottom": 20}}}, "order": ["announcement-bar", "header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "countdown_8aEjYJ": {
+          "type": "countdown",
+          "settings": {
+            "prefix_text": "🇺🇸 Memorial Day Sale ends in",
+            "end_month": "5",
+            "end_day": "25",
+            "end_year": "2026",
+            "link": "shopify://collections"
+          }
+        },
+        "announcement_KHcbKX": {
+          "type": "announcement",
+          "settings": {
+            "text": "🏕️ Adventure gear on sale for 2 weeks — helmets, paddles, slippers & more →",
+            "link": "shopify://collections"
+          }
+        },
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "🎁 Warning: You’re about to become everyone’s favorite gift-giver.",
+            "link": "shopify://pages/gift-finder"
+          }
+        }
+      },
+      "block_order": [
+        "countdown_8aEjYJ",
+        "announcement_KHcbKX",
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-center",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
