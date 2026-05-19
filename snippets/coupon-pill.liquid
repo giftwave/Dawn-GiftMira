@@ -1,0 +1,37 @@
+{%- assign matched = section.settings.coupon_products | where: 'handle', product.handle -%}
+{%- if matched.size > 0 and section.settings.coupon_code != blank -%}
+  <div class="coupon-pill-wrapper">
+    <button
+      class="coupon-pill"
+      type="button"
+      data-coupon="{{ section.settings.coupon_code | escape }}"
+      data-return="{{ request.path }}"
+      aria-label="Apply coupon {{ section.settings.coupon_code | escape }}"
+    >
+      <span class="coupon-pill__icon svg-wrapper">
+        {{- 'icon-discount.svg' | inline_asset_content -}}
+      </span>
+      {%- if section.settings.coupon_pill_label != blank -%}
+        <span class="coupon-pill__label">{{ section.settings.coupon_pill_label }}</span>
+        <span class="coupon-pill__divider" aria-hidden="true">·</span>
+      {%- endif -%}
+      <span class="coupon-pill__code">{{ section.settings.coupon_code }}</span>
+      <span class="coupon-pill__cta" aria-hidden="true">— tap to apply</span>
+    </button>
+    <p class="coupon-pill__confirm" id="coupon-pill-confirm" aria-live="polite" hidden>
+      ✓ Discount applied — saves at checkout
+    </p>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.coupon-pill');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var code = btn.dataset.coupon;
+        sessionStorage.setItem('gw_coupon_return', window.location.pathname);
+        window.location.href = '/discount/' + encodeURIComponent(code);
+      });
+    })();
+  </script>
+{%- endif -%}

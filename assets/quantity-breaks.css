@@ -1,0 +1,246 @@
+.quantity-breaks {
+  margin: 0;
+  border-top: 1px solid rgba(var(--color-foreground), 0.08);
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  background: transparent;
+  padding: 4px 0;
+}
+
+.quantity-breaks__heading {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+  padding: 14px 0 12px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Tier rows ──────────────────────────────────── */
+
+.quantity-breaks__tiers {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity-breaks__tier-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border: none;
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+  width: 100%;
+}
+
+.quantity-breaks__tier-btn:last-child {
+  border-bottom: none;
+}
+
+.quantity-breaks__tier-btn:hover {
+  background: transparent;
+}
+
+.quantity-breaks__tier-btn.is-active {
+  background: transparent;
+}
+
+/* Radio dot */
+.qb-radio {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.12s;
+}
+
+.quantity-breaks__tier-btn.is-active .qb-radio {
+  border-color: #ff6b6b;
+}
+
+.qb-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+.quantity-breaks__tier-btn.is-active .qb-radio-dot {
+  opacity: 1;
+}
+
+/* Tier label */
+.qb-tier-label {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.qb-tier-qty {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.qb-tier-save {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* Savings amount — right-aligned */
+.qb-tier-savings-amt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #888;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.quantity-breaks__tier-btn.is-active .qb-tier-savings-amt {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* ── Slots ──────────────────────────────────────── */
+
+.quantity-breaks__slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(var(--color-foreground), 0.06);
+}
+
+.quantity-breaks__slots:empty {
+  display: none;
+}
+
+.quantity-breaks__slot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+}
+
+.quantity-breaks__slot:last-child {
+  border-bottom: none;
+}
+
+.qb-slot-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.qb-slot-options {
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.qb-option-wrap {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qb-option-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: #999;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.qb-option-select {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #2d2d2d;
+  background: #fff;
+  cursor: pointer;
+}
+
+.qb-option-select:focus {
+  outline: 2px solid #ff6b6b;
+  outline-offset: 1px;
+}
+
+.qb-unavailable-msg {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #c0392b;
+  margin: 4px 0 0;
+  width: 100%;
+}
+
+/* ── Footer / CTA ───────────────────────────────── */
+
+.quantity-breaks__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 0 4px;
+}
+
+.quantity-breaks__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  border-radius: 26px !important;
+}
+
+.qb-cta-text {
+  font-weight: 700;
+}
+
+.qb-cta-savings {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.quantity-breaks__error {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #c0392b;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .quantity-breaks__tier-btn {
+    padding: 10px 0;
+    gap: 10px;
+  }
+}

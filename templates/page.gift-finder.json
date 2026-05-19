@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "gift_finder": {
+      "type": "gift-finder",
+      "settings": {}
+    }
+  },
+  "order": ["gift_finder"]
+}

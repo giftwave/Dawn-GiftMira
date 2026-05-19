@@ -1,0 +1,932 @@
+<style>
+  .gf-section {
+    padding: 4rem 1.5rem 6rem;
+    background: rgb(var(--color-background));
+  }
+
+  .gf-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .gf-header {
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  .gf-header h1 {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    color: rgb(var(--color-foreground));
+    margin: 0 0 0.8rem;
+  }
+
+  .gf-header p {
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    color: rgba(var(--color-foreground), 0.65);
+    margin: 0;
+  }
+
+  /* Progress bar */
+  .gf-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .gf-progress__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.2);
+    transition: background 0.2s ease;
+  }
+
+  .gf-progress__dot.active {
+    background: #FF6B6B;
+    transform: scale(1.25);
+  }
+
+  .gf-progress__dot.done {
+    background: #22C55E;
+  }
+
+  .gf-progress__label {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.5);
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  /* Step */
+  .gf-step {
+    display: none;
+  }
+
+  .gf-step.active {
+    display: block;
+    animation: gf-fade-in 0.25s ease;
+  }
+
+  @keyframes gf-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .gf-step__heading {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: rgb(var(--color-foreground));
+    text-align: center;
+    margin: 0 0 2.4rem;
+  }
+
+  /* Option cards grid */
+  .gf-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .gf-options {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+  }
+
+  .gf-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.6rem 0.8rem;
+    background: rgb(var(--color-background));
+    border: 2px solid rgba(var(--color-foreground), 0.12);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+    user-select: none;
+    min-height: 100px;
+  }
+
+  .gf-option:hover {
+    border-color: rgba(255, 107, 107, 0.5);
+    box-shadow: 0 2px 12px rgba(255, 107, 107, 0.12);
+  }
+
+  .gf-option.selected {
+    border-color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.06);
+    box-shadow: 0 2px 12px rgba(255, 107, 107, 0.18);
+    transform: translateY(-2px);
+  }
+
+  .gf-option__icon {
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+
+  .gf-option__label {
+    font-family: var(--font-body-family);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: rgb(var(--color-foreground));
+    line-height: 1.3;
+  }
+
+  /* Budget pills */
+  .gf-budget {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .gf-budget-pill {
+    padding: 1rem 2.4rem;
+    border: 2px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 40px;
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .gf-budget-pill:hover {
+    border-color: #FF6B6B;
+  }
+
+  .gf-budget-pill.selected {
+    border-color: #FF6B6B;
+    background: #FF6B6B;
+    color: #ffffff;
+  }
+
+  /* Navigation buttons */
+  .gf-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .gf-nav--center {
+    justify-content: center;
+  }
+
+  .gf-btn {
+    padding: 1.2rem 2.8rem;
+    border-radius: 26px;
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .gf-btn:hover {
+    opacity: 0.88;
+  }
+
+  .gf-btn--primary {
+    background: #FF6B6B;
+    color: #ffffff;
+    flex: 1;
+  }
+
+  .gf-btn--secondary {
+    background: transparent;
+    color: rgba(var(--color-foreground), 0.6);
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .gf-btn--find {
+    background: #FF6B6B;
+    color: #ffffff;
+    width: 100%;
+    font-size: 1.7rem;
+    padding: 1.4rem 2rem;
+  }
+
+  .gf-skip {
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+
+  .gf-skip a {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.5);
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  /* Loading state */
+  .gf-loading {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .gf-loading.active {
+    display: flex;
+  }
+
+  .gf-spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 3px solid rgba(var(--color-foreground), 0.1);
+    border-top-color: #FF6B6B;
+    border-radius: 50%;
+    animation: gf-spin 0.7s linear infinite;
+    margin-bottom: 1.6rem;
+  }
+
+  @keyframes gf-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .gf-loading p {
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin: 0;
+  }
+
+  /* Interest chips in results */
+  .gf-interest-chips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.4rem 0 0;
+  }
+
+  .gf-interest-chips__label {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-right: 0.2rem;
+  }
+
+  .gf-interest-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    border: 1.5px solid rgba(var(--color-foreground), 0.18);
+    font-family: var(--font-body-family);
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+    user-select: none;
+  }
+
+  .gf-interest-chip:hover {
+    border-color: #FF6B6B;
+  }
+
+  .gf-interest-chip.active {
+    border-color: #FF6B6B;
+    background: #FF6B6B;
+    color: #ffffff;
+  }
+
+  /* Results */
+  .gf-results {
+    display: none;
+    margin-top: 0;
+  }
+
+  .gf-results.active {
+    display: block;
+    animation: gf-fade-in 0.3s ease;
+  }
+
+  .gf-results__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+
+  .gf-results__title {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: rgb(var(--color-foreground));
+    margin: 0 0 0.8rem;
+  }
+
+  .gf-results__subtitle {
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin: 0 0 1.6rem;
+  }
+
+  .gf-results__restart {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: #FF6B6B;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .gf-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .gf-product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .gf-product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .gf-product-card {
+    display: flex;
+    flex-direction: column;
+    background: rgb(var(--color-background));
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .gf-product-card:hover .gf-product-image {
+    transform: scale(1.03);
+  }
+
+  .gf-product-image-wrap {
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.04);
+    aspect-ratio: 1 / 1;
+    margin-bottom: 1rem;
+  }
+
+  .gf-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .gf-product-title {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: rgb(var(--color-foreground));
+    margin: 0 0 0.4rem;
+    line-height: 1.4;
+  }
+
+  .gf-product-price {
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(var(--color-foreground));
+    margin: 0;
+  }
+
+  .gf-no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    display: none;
+  }
+
+  .gf-no-results.active {
+    display: block;
+  }
+
+  .gf-no-results p {
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin-bottom: 2rem;
+  }
+</style>
+
+<div class="gf-section">
+  <div class="gf-wrapper">
+
+    <!-- Header -->
+    <div class="gf-header">
+      <h1>Find the Perfect Gift</h1>
+      <p>Answer 4 quick questions and we'll find exactly what they'll love.</p>
+    </div>
+
+    <!-- Quiz container -->
+    <div id="gf-quiz">
+
+      <!-- Progress -->
+      <div class="gf-progress" id="gf-progress-dots">
+        <span class="gf-progress__dot active" data-step="1"></span>
+        <span class="gf-progress__dot" data-step="2"></span>
+        <span class="gf-progress__dot" data-step="3"></span>
+        <span class="gf-progress__dot" data-step="4"></span>
+      </div>
+      <p class="gf-progress__label" id="gf-step-label">Step 1 of 4</p>
+
+      <!-- Step 1: Who is it for? -->
+      <div class="gf-step active" data-step="1">
+        <h2 class="gf-step__heading">Who are you shopping for?</h2>
+        <div class="gf-options" id="gf-recipient-options">
+          <div class="gf-option" data-value="partner">
+            <span class="gf-option__icon">💑</span>
+            <span class="gf-option__label">Partner</span>
+          </div>
+          <div class="gf-option" data-value="parent">
+            <span class="gf-option__icon">👨‍👩‍👧</span>
+            <span class="gf-option__label">Parent</span>
+          </div>
+          <div class="gf-option" data-value="friend">
+            <span class="gf-option__icon">👯</span>
+            <span class="gf-option__label">Friend</span>
+          </div>
+          <div class="gf-option" data-value="sibling">
+            <span class="gf-option__icon">👫</span>
+            <span class="gf-option__label">Sibling</span>
+          </div>
+          <div class="gf-option" data-value="child">
+            <span class="gf-option__icon">🧒</span>
+            <span class="gf-option__label">Child</span>
+          </div>
+          <div class="gf-option" data-value="coworker">
+            <span class="gf-option__icon">🤝</span>
+            <span class="gf-option__label">Coworker</span>
+          </div>
+        </div>
+        <div class="gf-nav gf-nav--center">
+          <button class="gf-btn gf-btn--primary" id="gf-next-1" disabled>Next →</button>
+        </div>
+        <div class="gf-skip"><a onclick="GiftFinder.skip(1)">Skip this question</a></div>
+      </div>
+
+      <!-- Step 2: What's the occasion? -->
+      <div class="gf-step" data-step="2">
+        <h2 class="gf-step__heading">What's the occasion?</h2>
+        <div class="gf-options" id="gf-occasion-options">
+          <div class="gf-option" data-value="birthday">
+            <span class="gf-option__icon">🎂</span>
+            <span class="gf-option__label">Birthday</span>
+          </div>
+          <div class="gf-option" data-value="anniversary">
+            <span class="gf-option__icon">💍</span>
+            <span class="gf-option__label">Anniversary</span>
+          </div>
+          <div class="gf-option" data-value="just-because">
+            <span class="gf-option__icon">🎁</span>
+            <span class="gf-option__label">Just Because</span>
+          </div>
+          <div class="gf-option" data-value="holiday">
+            <span class="gf-option__icon">🎄</span>
+            <span class="gf-option__label">Holiday</span>
+          </div>
+          <div class="gf-option" data-value="graduation">
+            <span class="gf-option__icon">🎓</span>
+            <span class="gf-option__label">Graduation</span>
+          </div>
+          <div class="gf-option" data-value="thank-you">
+            <span class="gf-option__icon">🙏</span>
+            <span class="gf-option__label">Thank You</span>
+          </div>
+        </div>
+        <div class="gf-nav">
+          <button class="gf-btn gf-btn--secondary" onclick="GiftFinder.goTo(1)">← Back</button>
+          <button class="gf-btn gf-btn--primary" id="gf-next-2" disabled>Next →</button>
+        </div>
+        <div class="gf-skip"><a onclick="GiftFinder.skip(2)">Skip this question</a></div>
+      </div>
+
+      <!-- Step 3: What are their interests? (multi-select) -->
+      <div class="gf-step" data-step="3">
+        <h2 class="gf-step__heading">What are they into? <span style="font-size: 1.4rem; font-weight: 400; color: rgba(var(--color-foreground), 0.5);">Select as many as you like</span></h2>
+        <div class="gf-options" id="gf-interest-options">
+          <div class="gf-option" data-value="tech-gadget-gifts">
+            <span class="gf-option__icon">🤖</span>
+            <span class="gf-option__label">Tech & Gadgets</span>
+          </div>
+          <div class="gf-option" data-value="music-lover-gifts">
+            <span class="gf-option__icon">🎵</span>
+            <span class="gf-option__label">Music Lover</span>
+          </div>
+          <div class="gf-option" data-value="outdoor-adventure-gifts">
+            <span class="gf-option__icon">🏕️</span>
+            <span class="gf-option__label">Outdoors</span>
+          </div>
+          <div class="gf-option" data-value="home-decor-gifts">
+            <span class="gf-option__icon">🏠</span>
+            <span class="gf-option__label">Home & Decor</span>
+          </div>
+          <div class="gf-option" data-value="gaming-gifts">
+            <span class="gf-option__icon">🎮</span>
+            <span class="gf-option__label">Gaming</span>
+          </div>
+          <div class="gf-option" data-value="cosplay-collectibles">
+            <span class="gf-option__icon">🦸</span>
+            <span class="gf-option__label">Cosplay & Anime</span>
+          </div>
+          <div class="gf-option" data-value="jewelry">
+            <span class="gf-option__icon">💎</span>
+            <span class="gf-option__label">Jewelry</span>
+          </div>
+          <div class="gf-option" data-value="best-sellers">
+            <span class="gf-option__icon">😂</span>
+            <span class="gf-option__label">Funny & Novelty</span>
+          </div>
+          <div class="gf-option" data-value="luxury-gifts">
+            <span class="gf-option__icon">✨</span>
+            <span class="gf-option__label">Luxury</span>
+          </div>
+        </div>
+        <div class="gf-nav">
+          <button class="gf-btn gf-btn--secondary" onclick="GiftFinder.goTo(2)">← Back</button>
+          <button class="gf-btn gf-btn--primary" id="gf-next-3">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Budget -->
+      <div class="gf-step" data-step="4">
+        <h2 class="gf-step__heading">What's your budget?</h2>
+        <div class="gf-budget" id="gf-budget-options">
+          <button class="gf-budget-pill" data-min="0" data-max="3000">Under $30</button>
+          <button class="gf-budget-pill" data-min="3000" data-max="6000">$30 – $60</button>
+          <button class="gf-budget-pill" data-min="6000" data-max="10000">$60 – $100</button>
+          <button class="gf-budget-pill" data-min="10000" data-max="999999">$100+</button>
+          <button class="gf-budget-pill" data-min="0" data-max="999999">Any Budget</button>
+        </div>
+        <div class="gf-nav">
+          <button class="gf-btn gf-btn--secondary" onclick="GiftFinder.goTo(3)">← Back</button>
+          <button class="gf-btn gf-btn--find" id="gf-find-btn" disabled>Find My Gift 🎁</button>
+        </div>
+      </div>
+
+    </div><!-- end gf-quiz -->
+
+    <!-- Loading state -->
+    <div class="gf-loading" id="gf-loading">
+      <div class="gf-spinner"></div>
+      <p>Finding the perfect gifts for you…</p>
+    </div>
+
+    <!-- No results -->
+    <div class="gf-no-results" id="gf-no-results">
+      <p>We couldn't find products in that price range — try widening your budget.</p>
+      <button class="gf-btn gf-btn--secondary" onclick="GiftFinder.restart()">← Start Over</button>
+    </div>
+
+    <!-- Results -->
+    <div class="gf-results" id="gf-results">
+      <div class="gf-results__header">
+        <h2 class="gf-results__title" id="gf-results-title">We found gifts they'll love</h2>
+        <p class="gf-results__subtitle" id="gf-results-subtitle"></p>
+        <div class="gf-interest-chips" id="gf-result-interest-chips"></div>
+        <button class="gf-results__restart" onclick="GiftFinder.restart()">← Start over</button>
+      </div>
+      <div class="gf-product-grid" id="gf-product-grid"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var GiftFinder = (function () {
+  var state = {
+    step: 1,
+    recipient: null,
+    occasion: null,
+    interests: [],
+    budgetMin: 0,
+    budgetMax: 999999
+  };
+
+  var recipientLabels = {
+    partner: 'your partner', parent: 'a parent', friend: 'a friend',
+    sibling: 'a sibling', child: 'a child', coworker: 'a coworker'
+  };
+
+  var ALL_COLLECTIONS = [
+    'tech-gadget-gifts', 'music-lover-gifts', 'outdoor-adventure-gifts',
+    'home-decor-gifts', 'gaming-gifts', 'cosplay-collectibles',
+    'jewelry', 'best-sellers', 'luxury-gifts'
+  ];
+
+  var interestToCollections = {
+    'tech-gadget-gifts':       ['tech-gadget-gifts'],
+    'music-lover-gifts':       ['music-lover-gifts'],
+    'outdoor-adventure-gifts': ['outdoor-adventure-gifts'],
+    'home-decor-gifts':        ['home-decor-gifts', 'housewarming-gifts'],
+    'gaming-gifts':            ['gaming-gifts'],
+    'cosplay-collectibles':    ['cosplay-collectibles', 'dragon-ball-z'],
+    'jewelry':                 ['jewelry'],
+    'best-sellers':            ['best-sellers'],
+    'luxury-gifts':            ['luxury-gifts']
+  };
+
+  function init() {
+    // Step 1 single-select
+    bindSingleSelect('gf-recipient-options', function (val) {
+      state.recipient = val;
+      document.getElementById('gf-next-1').disabled = false;
+    });
+
+    // Step 2 single-select
+    bindSingleSelect('gf-occasion-options', function (val) {
+      state.occasion = val;
+      document.getElementById('gf-next-2').disabled = false;
+    });
+
+    // Step 3 multi-select (0 selected = show all interests)
+    bindMultiSelect('gf-interest-options', function (vals) {
+      state.interests = vals;
+    });
+
+    // Budget pills
+    document.querySelectorAll('.gf-budget-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        document.querySelectorAll('.gf-budget-pill').forEach(function (p) { p.classList.remove('selected'); });
+        pill.classList.add('selected');
+        state.budgetMin = parseInt(pill.dataset.min);
+        state.budgetMax = parseInt(pill.dataset.max);
+        document.getElementById('gf-find-btn').disabled = false;
+      });
+    });
+
+    // Next buttons
+    document.getElementById('gf-next-1').addEventListener('click', function () { goTo(2); });
+    document.getElementById('gf-next-2').addEventListener('click', function () { goTo(3); });
+    document.getElementById('gf-next-3').addEventListener('click', function () { goTo(4); });
+    document.getElementById('gf-find-btn').addEventListener('click', findGifts);
+  }
+
+  function bindSingleSelect(containerId, onChange) {
+    document.getElementById(containerId).querySelectorAll('.gf-option').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        document.getElementById(containerId).querySelectorAll('.gf-option').forEach(function (o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        onChange(opt.dataset.value);
+      });
+    });
+  }
+
+  function bindMultiSelect(containerId, onChange) {
+    document.getElementById(containerId).querySelectorAll('.gf-option').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        opt.classList.toggle('selected');
+        var selected = Array.from(document.getElementById(containerId).querySelectorAll('.gf-option.selected')).map(function (o) { return o.dataset.value; });
+        onChange(selected);
+      });
+    });
+  }
+
+  function goTo(step) {
+    document.querySelectorAll('.gf-step').forEach(function (s) { s.classList.remove('active'); });
+    document.querySelector('.gf-step[data-step="' + step + '"]').classList.add('active');
+    state.step = step;
+    updateProgress();
+    window.scrollTo({ top: document.querySelector('.gf-section').offsetTop - 80, behavior: 'smooth' });
+  }
+
+  function updateProgress() {
+    document.getElementById('gf-step-label').textContent = 'Step ' + state.step + ' of 4';
+    document.querySelectorAll('.gf-progress__dot').forEach(function (dot) {
+      var dotStep = parseInt(dot.dataset.step);
+      dot.classList.remove('active', 'done');
+      if (dotStep === state.step) dot.classList.add('active');
+      else if (dotStep < state.step) dot.classList.add('done');
+    });
+  }
+
+  function skip(currentStep) {
+    if (currentStep === 1) state.recipient = null;
+    if (currentStep === 2) state.occasion = null;
+    if (currentStep === 3) state.interests = [];
+    if (currentStep < 4) goTo(currentStep + 1);
+    else findGifts();
+  }
+
+  async function findGifts(keepQuizHidden) {
+    // Hide quiz, show loading
+    if (!keepQuizHidden) {
+      document.getElementById('gf-quiz').style.display = 'none';
+    }
+    document.getElementById('gf-loading').classList.add('active');
+    document.getElementById('gf-results').classList.remove('active');
+    document.getElementById('gf-no-results').classList.remove('active');
+
+    try {
+      var collections;
+      if (state.interests.length > 0) {
+        collections = [];
+        state.interests.forEach(function (interest) {
+          (interestToCollections[interest] || []).forEach(function (c) {
+            if (collections.indexOf(c) === -1) collections.push(c);
+          });
+        });
+        if (collections.length === 0) collections = ALL_COLLECTIONS.slice();
+      } else {
+        collections = ALL_COLLECTIONS.slice();
+      }
+
+      var allProducts = [];
+      var seen = {};
+
+      for (var i = 0; i < collections.length; i++) {
+        var handle = collections[i];
+        try {
+          var res = await fetch('/collections/' + handle + '/products.json?limit=250');
+          if (!res.ok) continue;
+          var data = await res.json();
+          (data.products || []).forEach(function (p) {
+            if (!seen[p.id]) {
+              seen[p.id] = true;
+              allProducts.push(p);
+            }
+          });
+        } catch (e) { /* skip failed collection */ }
+      }
+
+      // Apply budget filter
+      var filtered = allProducts.filter(function (p) {
+        var price = parseInt(p.variants && p.variants[0] ? p.variants[0].price * 100 : 0);
+        return price >= state.budgetMin && price <= state.budgetMax;
+      });
+
+      // Shuffle for variety
+      filtered = filtered.sort(function () { return Math.random() - 0.5; });
+
+      // Show up to 12
+      var toShow = filtered.slice(0, 12);
+
+      document.getElementById('gf-loading').classList.remove('active');
+
+      if (toShow.length === 0) {
+        document.getElementById('gf-no-results').classList.add('active');
+        return;
+      }
+
+      renderResults(toShow, allProducts.length, filtered.length);
+    } catch (err) {
+      document.getElementById('gf-loading').classList.remove('active');
+      document.getElementById('gf-no-results').classList.add('active');
+    }
+  }
+
+  var allInterestOptions = [
+    { value: 'tech-gadget-gifts',       icon: '🤖', label: 'Tech & Gadgets' },
+    { value: 'music-lover-gifts',       icon: '🎵', label: 'Music Lover' },
+    { value: 'outdoor-adventure-gifts', icon: '🏕️', label: 'Outdoors' },
+    { value: 'home-decor-gifts',        icon: '🏠', label: 'Home & Decor' },
+    { value: 'gaming-gifts',            icon: '🎮', label: 'Gaming' },
+    { value: 'cosplay-collectibles',    icon: '🦸', label: 'Cosplay & Anime' },
+    { value: 'jewelry',                 icon: '💎', label: 'Jewelry' },
+    { value: 'best-sellers',            icon: '😂', label: 'Funny & Novelty' },
+    { value: 'luxury-gifts',            icon: '✨', label: 'Luxury' }
+  ];
+
+  function renderInterestChips() {
+    var container = document.getElementById('gf-result-interest-chips');
+    if (!container) return;
+
+    var label = document.createElement('span');
+    label.className = 'gf-interest-chips__label';
+    label.textContent = 'Interests:';
+    container.innerHTML = '';
+    container.appendChild(label);
+
+    allInterestOptions.forEach(function (opt) {
+      var chip = document.createElement('button');
+      chip.className = 'gf-interest-chip' + (state.interests.indexOf(opt.value) !== -1 ? ' active' : '');
+      chip.textContent = opt.icon + ' ' + opt.label;
+      chip.addEventListener('click', function () {
+        var idx = state.interests.indexOf(opt.value);
+        if (idx !== -1) {
+          state.interests.splice(idx, 1);
+        } else {
+          state.interests.push(opt.value);
+        }
+        chip.classList.toggle('active');
+        // Re-fetch with updated interests
+        document.getElementById('gf-product-grid').innerHTML = '';
+        var loadingEl = document.getElementById('gf-loading');
+        document.getElementById('gf-results').classList.remove('active');
+        loadingEl.classList.add('active');
+        findGifts(true);
+      });
+      container.appendChild(chip);
+    });
+  }
+
+  function renderResults(products, totalFetched, filteredCount) {
+    var recipientLabel = state.recipient ? recipientLabels[state.recipient] : 'them';
+    var countLabel = filteredCount > 12 ? '12+ gifts' : filteredCount + ' gift' + (filteredCount !== 1 ? 's' : '');
+
+    document.getElementById('gf-results-title').textContent = 'We found ' + countLabel + ' for ' + recipientLabel;
+    document.getElementById('gf-results-subtitle').textContent = state.occasion
+      ? 'Perfect for ' + state.occasion.replace(/-/g, ' ') + ' — curated just for you.'
+      : 'Curated just for you.';
+
+    var grid = document.getElementById('gf-product-grid');
+    grid.innerHTML = '';
+
+    products.forEach(function (product) {
+      var img = product.images && product.images[0] ? product.images[0].src : null;
+      var price = product.variants && product.variants[0] ? parseFloat(product.variants[0].price) : 0;
+      var priceFormatted = '$' + price.toFixed(2).replace(/\.00$/, '');
+
+      var card = document.createElement('a');
+      card.href = '/products/' + product.handle;
+      card.className = 'gf-product-card';
+      card.innerHTML = '<div class="gf-product-image-wrap">'
+        + (img ? '<img class="gf-product-image" src="' + img.replace(/\.(jpg|png|gif|webp)/, '_400x400.$1') + '" alt="' + escapeHtml(product.title) + '" loading="lazy">' : '<div class="gf-product-image" style="background: rgba(var(--color-foreground),0.06)"></div>')
+        + '</div>'
+        + '<p class="gf-product-title">' + escapeHtml(product.title) + '</p>'
+        + '<p class="gf-product-price">' + priceFormatted + '</p>';
+
+      grid.appendChild(card);
+    });
+
+    renderInterestChips();
+    document.getElementById('gf-results').classList.add('active');
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function restart() {
+    state = { step: 1, recipient: null, occasion: null, interests: [], budgetMin: 0, budgetMax: 999999 };
+    // Reset all selections
+    document.querySelectorAll('.gf-option').forEach(function (o) { o.classList.remove('selected'); });
+    document.querySelectorAll('.gf-budget-pill').forEach(function (p) { p.classList.remove('selected'); });
+    document.getElementById('gf-next-1').disabled = true;
+    document.getElementById('gf-next-2').disabled = true;
+    document.getElementById('gf-next-3').disabled = true;
+    document.getElementById('gf-find-btn').disabled = true;
+    document.getElementById('gf-results').classList.remove('active');
+    document.getElementById('gf-no-results').classList.remove('active');
+    document.getElementById('gf-quiz').style.display = '';
+    goTo(1);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  return { goTo: goTo, skip: skip, restart: restart };
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Gift Finder",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gift Finder"
+    }
+  ]
+}
+{% endschema %}
