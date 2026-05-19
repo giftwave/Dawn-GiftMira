@@ -1,1 +1,391 @@
-{"sections":{"image_banner":{"type":"image-banner","blocks":{"heading_LgC8Qc":{"type":"heading","settings":{"heading":"Give Gifts They'll Actually Remember.","heading_size":"h1"}},"text_mnN9Jz":{"type":"text","settings":{"text":"The gift that makes them say — \"How did you know?\"","text_style":"body"}},"buttons_GTGzUE":{"type":"buttons","settings":{"button_label_1":"Shop Best Sellers","button_link_1":"shopify:\/\/collections\/best-sellers","button_style_secondary_1":false,"button_label_2":"Gift Finder","button_link_2":"shopify:\/\/pages\/gift-finder","button_style_secondary_2":false}}},"block_order":["heading_LgC8Qc","text_mnN9Jz","buttons_GTGzUE"],"settings":{"image_overlay_opacity":30,"image_height":"adapt","image_behavior":"none","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"scheme-1","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":true}},"17696046460a07d622":{"type":"_blocks","blocks":{"ai_gen_block_d85268b_FMMxGQ":{"type":"ai_gen_block_d85268b","settings":{"layout":"container","title":"Shop By Occasion","title_size":30,"title_alignment":"left","title_color":"#2d2d2d","collections":[],"image_size":90,"spacing":15,"border_width":1,"border_color":"#fbefcc","image_background":"#fbefcc","name_size":15,"name_color":"#2d2d2d","hover_lift":8,"scrollbar_color":"#fbefcc"},"blocks":{}}},"block_order":["ai_gen_block_d85268b_FMMxGQ"],"settings":{}},"featured_collection_6yJd8y":{"type":"featured-collection","name":"t:sections.featured-collection.presets.name","settings":{"collection":"gifts-for-her","products_to_show":10,"title":"Gifts She'll Actually Love","heading_size":"h2","description":"<p>Thoughtfully curated for the women who are impossible to shop for. From the sentimental to the surprising — find something as unique as she is.<\/p>","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"link","color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":32,"padding_bottom":32}},"1777278155914f6b7d":{"type":"apps","settings":{"include_margins":true}},"collection_list_fRHyPV":{"type":"collection-list","blocks":{"featured_collection_ccVGci":{"type":"featured_collection","settings":{"collection":"gifts-for-her"}},"featured_collection_4bk7LC":{"type":"featured_collection","settings":{"collection":"gifts-for-him"}},"featured_collection_KNy9PJ":{"type":"featured_collection","settings":{"collection":"gifts-for-kids"}},"featured_collection_PqNbtJ":{"type":"featured_collection","settings":{"collection":"birthday-gifts"}}},"block_order":["featured_collection_ccVGci","featured_collection_4bk7LC","featured_collection_KNy9PJ","featured_collection_PqNbtJ"],"name":"t:sections.collection-list.presets.name","settings":{"title":"Explore Gifts Tailored to Family","heading_size":"h2","image_ratio":"square","columns_desktop":4,"color_scheme":"","show_view_all":false,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":32,"padding_bottom":32}},"featured_product_zUGmkL":{"type":"featured-product","blocks":{"title_B3Atca":{"type":"title","settings":{"heading_size":"h1"}},"price_mgY6Q9":{"type":"price","settings":{}},"variant_picker_JBtWUe":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector_RaCzHa":{"type":"quantity_selector","settings":{}},"buy_buttons_z8LddG":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":true}},"share_tHExRt":{"type":"share","settings":{"share_label":"Share"}}},"block_order":["title_B3Atca","price_mgY6Q9","variant_picker_JBtWUe","quantity_selector_RaCzHa","buy_buttons_z8LddG","share_tHExRt"],"name":"t:sections.featured-product.presets.name","settings":{"product":"abstract-geometric-gold-elephant-figurine","color_scheme":"","secondary_background":true,"media_size":"medium","constrain_to_viewport":true,"media_fit":"contain","media_position":"left","image_zoom":"lightbox","hide_variants":false,"enable_video_looping":false,"padding_top":32,"padding_bottom":32}},"collection_list_fjdAnM":{"type":"collection-list","blocks":{"featured_collection_Jg6tAi":{"type":"featured_collection","settings":{"collection":"gifts-for-friends"}},"featured_collection_RfWgaE":{"type":"featured_collection","settings":{"collection":"fathers-day-gifts"}},"featured_collection_MRYeUn":{"type":"featured_collection","settings":{"collection":"mothers-day-gifts"}},"featured_collection_CA7qDM":{"type":"featured_collection","settings":{"collection":"housewarming-gifts"}}},"block_order":["featured_collection_Jg6tAi","featured_collection_RfWgaE","featured_collection_MRYeUn","featured_collection_CA7qDM"],"name":"t:sections.collection-list.presets.name","settings":{"title":"Collections Inspired by Others:","heading_size":"h2","image_ratio":"square","columns_desktop":4,"color_scheme":"scheme-1","show_view_all":false,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":36,"padding_bottom":36}},"1774175202e0336afc":{"type":"apps","settings":{"include_margins":true}},"blocks_DjWeB7":{"type":"_blocks","blocks":{"ai_gen_block_d85268b_k6Ce3a":{"type":"ai_gen_block_d85268b","settings":{"layout":"container","title":"Shop By Occasion","title_size":30,"title_alignment":"left","title_color":"#2d2d2d","collections":["anniversary-gifts","gaming-gifts","gifts-for-friends","kitchen-foodie-gifts","home-decor-gifts","jewelry","music-lover-gifts","outdoor-adventure-gifts","self-care-wellness-gifts","thank-you-gifts","valentines-day-gifts","travel-gifts"],"image_size":90,"spacing":15,"border_width":1,"border_color":"#fbefcc","image_background":"#fbefcc","name_size":15,"name_color":"#2d2d2d","hover_lift":8,"scrollbar_color":"#fbefcc"},"blocks":{}}},"block_order":["ai_gen_block_d85268b_k6Ce3a"],"settings":{}},"featured_collection":{"type":"featured-collection","settings":{"collection":"mothers-day-gifts","products_to_show":10,"title":"Make Her Mother's Day Unforgettable","heading_size":"h2","description":"<p>Mother's Day is May 11th. These are the gifts that go beyond the expected — because she deserves more than another candle. Order by May 8th to arrive in time.<\/p>","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"link","color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":false,"padding_top":32,"padding_bottom":32}},"17741752276ed8972f":{"type":"apps","settings":{"include_margins":true}},"featured_collection_bdczWN":{"type":"featured-collection","name":"t:sections.featured-collection.presets.name","settings":{"collection":"birthday-gifts","products_to_show":4,"title":"Make Their Birthday Extra Special","heading_size":"h2","description":"<p>Unwrap a collection of unique gifts guaranteed to spark smiles, laughter, and unforgettable moments.<\/p>","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"link","color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":32,"padding_bottom":32}},"featured_blog_x43WxJ":{"type":"featured-blog","name":"t:sections.featured-blog.presets.name","settings":{"blog":"gift-guides","post_limit":3,"heading":"The Gift Edit","heading_size":"h2","columns_desktop":3,"show_view_all":true,"show_image":true,"show_date":false,"show_author":false,"color_scheme":"scheme-1","padding_top":32,"padding_bottom":32}}},"order":["image_banner","17696046460a07d622","featured_collection_6yJd8y","1777278155914f6b7d","collection_list_fRHyPV","featured_product_zUGmkL","collection_list_fjdAnM","1774175202e0336afc","blocks_DjWeB7","featured_collection","17741752276ed8972f","featured_collection_bdczWN","featured_blog_x43WxJ"]}
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_LgC8Qc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Finally, a gift they'll actually love.",
+            "heading_size": "h1"
+          }
+        },
+        "text_mnN9Jz": {
+          "type": "text",
+          "settings": {
+            "text": "Curated gifts for every occasion — the kind that make them say, \"How did you know?\"",
+            "text_style": "body"
+          }
+        },
+        "buttons_GTGzUE": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop by Occasion",
+            "button_link_1": "shopify://collections/best-sellers",
+            "button_style_secondary_1": false,
+            "button_label_2": "Find Their Gift",
+            "button_link_2": "shopify://pages/gift-finder",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["heading_LgC8Qc", "text_mnN9Jz", "buttons_GTGzUE"],
+      "settings": {
+        "image_overlay_opacity": 30,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "trust_strip": {
+      "type": "multicolumn",
+      "blocks": {
+        "col_1": {
+          "type": "column",
+          "settings": {
+            "title": "Curated Selection",
+            "text": "<p>Every product is hand-picked for the wow moment. No filler, no average gifts.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_2": {
+          "type": "column",
+          "settings": {
+            "title": "Free Shipping",
+            "text": "<p>Free shipping on every order, every time — no minimum, no fine print.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_3": {
+          "type": "column",
+          "settings": {
+            "title": "30-Day Returns",
+            "text": "<p>Love it or we'll make it right — free returns within 30 days, no questions asked.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col_4": {
+          "type": "column",
+          "settings": {
+            "title": "Real Reviews",
+            "text": "<p>Every rating is from a real customer. We let the reactions speak for themselves.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["col_1", "col_2", "col_3", "col_4"],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "17696046460a07d622": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d85268b_FMMxGQ": {
+          "type": "ai_gen_block_d85268b",
+          "settings": {
+            "layout": "container",
+            "title": "Shop by Occasion",
+            "title_size": 30,
+            "title_alignment": "left",
+            "title_color": "#2A2018",
+            "collections": [],
+            "image_size": 90,
+            "spacing": 15,
+            "border_width": 1,
+            "border_color": "#fbefcc",
+            "image_background": "#fbefcc",
+            "name_size": 15,
+            "name_color": "#2A2018",
+            "hover_lift": 8,
+            "scrollbar_color": "#fbefcc"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["ai_gen_block_d85268b_FMMxGQ"],
+      "settings": {}
+    },
+    "featured_collection_6yJd8y": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "best-sellers",
+        "products_to_show": 8,
+        "title": "Everyone's Talking About These",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "1777278155914f6b7d": {
+      "type": "apps",
+      "settings": { "include_margins": true }
+    },
+    "collection_list_fRHyPV": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_ccVGci": { "type": "featured_collection", "settings": { "collection": "gifts-for-her" } },
+        "featured_collection_4bk7LC": { "type": "featured_collection", "settings": { "collection": "gifts-for-him" } },
+        "featured_collection_KNy9PJ": { "type": "featured_collection", "settings": { "collection": "gifts-for-kids" } },
+        "featured_collection_PqNbtJ": { "type": "featured_collection", "settings": { "collection": "birthday-gifts" } }
+      },
+      "block_order": ["featured_collection_ccVGci", "featured_collection_4bk7LC", "featured_collection_KNy9PJ", "featured_collection_PqNbtJ"],
+      "settings": {
+        "title": "Gifts for Every Person You Love",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_fjdAnM": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_Jg6tAi": { "type": "featured_collection", "settings": { "collection": "fathers-day-gifts" } },
+        "featured_collection_RfWgaE": { "type": "featured_collection", "settings": { "collection": "graduation-gifts" } },
+        "featured_collection_MRYeUn": { "type": "featured_collection", "settings": { "collection": "housewarming-gifts" } },
+        "featured_collection_CA7qDM": { "type": "featured_collection", "settings": { "collection": "tech-gadget-gifts" } }
+      },
+      "block_order": ["featured_collection_Jg6tAi", "featured_collection_RfWgaE", "featured_collection_MRYeUn", "featured_collection_CA7qDM"],
+      "settings": {
+        "title": "Shop by the Moment",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1774175202e0336afc": {
+      "type": "apps",
+      "settings": { "include_margins": true }
+    },
+    "blocks_DjWeB7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d85268b_k6Ce3a": {
+          "type": "ai_gen_block_d85268b",
+          "settings": {
+            "layout": "container",
+            "title": "More Ways to Gift",
+            "title_size": 30,
+            "title_alignment": "left",
+            "title_color": "#2A2018",
+            "collections": [
+              "anniversary-gifts", "gaming-gifts", "gifts-for-friends",
+              "kitchen-foodie-gifts", "home-decor-gifts", "jewelry",
+              "music-lover-gifts", "outdoor-adventure-gifts",
+              "self-care-wellness-gifts", "thank-you-gifts",
+              "travel-gifts", "gifts-under-50"
+            ],
+            "image_size": 90,
+            "spacing": 15,
+            "border_width": 1,
+            "border_color": "#fbefcc",
+            "image_background": "#fbefcc",
+            "name_size": 15,
+            "name_color": "#2A2018",
+            "hover_lift": 8,
+            "scrollbar_color": "#fbefcc"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["ai_gen_block_d85268b_k6Ce3a"],
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "fathers-day-gifts",
+        "products_to_show": 8,
+        "title": "Father's Day is Coming — Don't Wing It",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "17741752276ed8972f": {
+      "type": "apps",
+      "settings": { "include_margins": true }
+    },
+    "featured_collection_bdczWN": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "gifts-under-50",
+        "products_to_show": 4,
+        "title": "Impressive Gifts Under $50",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_about": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_about": {
+          "type": "heading",
+          "settings": {
+            "heading": "The gift store that actually gets it.",
+            "heading_size": "h2"
+          }
+        },
+        "text_about": {
+          "type": "text",
+          "settings": {
+            "text": "<p>GiftMira exists because finding a meaningful gift shouldn't take three hours of scrolling. We curate products that spark real reactions — the wide eyes, the speechless moment, the \"how did you know?\" That's the GiftMira standard.</p>"
+          }
+        },
+        "btn_about": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Story",
+            "button_link": "shopify://pages/about",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": ["heading_about", "text_about", "btn_about"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-95da9aa2-849d-4358-97c5-6fa4e65feca5",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "featured_blog_x43WxJ": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "gift-guides",
+        "post_limit": 3,
+        "heading": "The Gift Edit — Ideas Worth Stealing",
+        "heading_size": "h2",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "email_signup": {
+      "type": "email-signup",
+      "blocks": {
+        "heading_email": {
+          "type": "heading",
+          "settings": { "heading": "Get gift ideas before everyone else." }
+        },
+        "paragraph_email": {
+          "type": "paragraph",
+          "settings": { "text": "Join GiftMira and get 10% off your first order. Curated picks, seasonal guides, no spam — ever." }
+        }
+      },
+      "block_order": ["heading_email", "paragraph_email"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "trust_strip",
+    "17696046460a07d622",
+    "featured_collection_6yJd8y",
+    "1777278155914f6b7d",
+    "collection_list_fRHyPV",
+    "collection_list_fjdAnM",
+    "1774175202e0336afc",
+    "blocks_DjWeB7",
+    "featured_collection",
+    "17741752276ed8972f",
+    "featured_collection_bdczWN",
+    "rich_text_about",
+    "featured_blog_x43WxJ",
+    "email_signup"
+  ]
+}
