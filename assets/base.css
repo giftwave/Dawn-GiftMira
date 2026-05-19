@@ -2938,7 +2938,7 @@ details-disclosure > details {
     padding: 0.4rem 0.9rem 0.45rem 0.9rem;
   }
 
-  .giftwave-occasion-badge {
+  .giftmira-occasion-badge {
     font-size: 1.1rem;
     padding: 0.3rem 0.85rem;
   }
@@ -3610,7 +3610,7 @@ details-disclosure > details {
 }
 
 /* ============================================================
-   GIFTWAVE BRAND OVERRIDES
+   GIFTMIRA BRAND OVERRIDES
    ============================================================ */
 
 /* Fix 1: EB Garamond bold on all headings */
@@ -3630,7 +3630,7 @@ h4,
 }
 
 /* Guarantee strip (above Add to Cart) */
-.giftwave-guarantee-strip {
+.giftmira-guarantee-strip {
   text-align: center;
   font-family: var(--font-body-family);
   font-size: 1.2rem;
@@ -3639,17 +3639,17 @@ h4,
   padding: 0;
   line-height: 2;
 }
-.giftwave-guarantee-strip .gw-check {
+.giftmira-guarantee-strip .gw-check {
   color: #22C55E;
   font-weight: 700;
 }
-.giftwave-guarantee-strip .gw-sep {
+.giftmira-guarantee-strip .gw-sep {
   opacity: 0.3;
   margin: 0 0.25rem;
 }
 
 /* Gift occasion badge (above product title) */
-.giftwave-occasion-badge {
+.giftmira-occasion-badge {
   display: inline-block;
   background: #F2CA56;
   color: #2D2D2D;
@@ -3663,7 +3663,7 @@ h4,
 }
 
 /* Key benefits list (below product title) */
-.giftwave-key-benefits {
+.giftmira-key-benefits {
   list-style: none;
   margin: 0.75rem 0 0;
   padding: 0;
@@ -3671,7 +3671,7 @@ h4,
   flex-direction: column;
   gap: 0.4rem;
 }
-.giftwave-key-benefits li {
+.giftmira-key-benefits li {
   font-family: var(--font-body-family);
   font-size: 1.35rem;
   color: rgba(var(--color-foreground), 0.85);
@@ -3679,14 +3679,14 @@ h4,
   align-items: baseline;
   gap: 0.5rem;
 }
-.giftwave-key-benefits .gw-benefit-check {
+.giftmira-key-benefits .gw-benefit-check {
   color: #22C55E;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 /* Fix 2: Trust bar (below Add to Cart) */
-.giftwave-trust-bar {
+.giftmira-trust-bar {
   text-align: center;
   font-family: var(--font-body-family);
   font-size: 1.2rem;
@@ -3697,16 +3697,16 @@ h4,
   margin-top: 1.2rem;
   line-height: 2;
 }
-.giftwave-trust-bar .gw-check {
+.giftmira-trust-bar .gw-check {
   color: #22C55E;
   font-weight: 700;
 }
-.giftwave-trust-bar .gw-sep {
+.giftmira-trust-bar .gw-sep {
   opacity: 0.3;
   margin: 0 0.25rem;
 }
 
-.giftwave-trust-icon {
+.giftmira-trust-icon {
   color: #22C55E;
   font-size: 1.3rem;
   line-height: 1;
@@ -3714,7 +3714,7 @@ h4,
 }
 
 @media screen and (max-width: 479px) {
-  .giftwave-trust-bar {
+  .giftmira-trust-bar {
     justify-content: flex-start;
     column-gap: 1.2rem;
     row-gap: 0.6rem;
@@ -3722,7 +3722,7 @@ h4,
 }
 
 /* Fix 3: Sticky Add to Cart bar (mobile only) */
-.giftwave-sticky-atc {
+.giftmira-sticky-atc {
   display: none;
   position: fixed;
   bottom: 0;
@@ -3737,16 +3737,16 @@ h4,
   gap: 1.2rem;
 }
 
-.giftwave-sticky-atc.is-visible {
+.giftmira-sticky-atc.is-visible {
   display: flex;
 }
 
-.giftwave-sticky-atc__info {
+.giftmira-sticky-atc__info {
   flex: 1;
   min-width: 0;
 }
 
-.giftwave-sticky-atc__title {
+.giftmira-sticky-atc__title {
   font-family: var(--font-heading-family);
   font-weight: 700;
   font-size: 1.3rem;
@@ -3757,30 +3757,30 @@ h4,
   margin: 0;
 }
 
-.giftwave-sticky-atc__price-wrap {
+.giftmira-sticky-atc__price-wrap {
   display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.2rem;
 }
-.giftwave-sticky-atc__price-sale {
+.giftmira-sticky-atc__price-sale {
   font-family: var(--font-body-family); font-size: 1.3rem; font-weight: 600;
   color: rgb(var(--color-foreground));
 }
-.giftwave-sticky-atc__price-compare,
-.giftwave-sticky-atc__price-savings { display: none; }
+.giftmira-sticky-atc__price-compare,
+.giftmira-sticky-atc__price-savings { display: none; }
 
-.giftwave-sticky-atc__price-wrap.is-on-sale .giftwave-sticky-atc__price-sale {
+.giftmira-sticky-atc__price-wrap.is-on-sale .giftmira-sticky-atc__price-sale {
   color: #FF6B6B; font-weight: 700;
 }
-.giftwave-sticky-atc__price-wrap.is-on-sale .giftwave-sticky-atc__price-compare {
+.giftmira-sticky-atc__price-wrap.is-on-sale .giftmira-sticky-atc__price-compare {
   display: inline; font-size: 1.1rem; font-weight: 400;
   color: rgba(var(--color-foreground), 0.45); text-decoration: line-through;
 }
-.giftwave-sticky-atc__price-wrap.is-on-sale .giftwave-sticky-atc__price-savings {
+.giftmira-sticky-atc__price-wrap.is-on-sale .giftmira-sticky-atc__price-savings {
   display: inline; font-size: 1.0rem; font-weight: 600;
   color: #22C55E; background: rgba(34,197,94,0.10);
   padding: 0.1rem 0.5rem; border-radius: 4px;
 }
 
-.giftwave-sticky-atc__button {
+.giftmira-sticky-atc__button {
   flex-shrink: 0;
   background: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
@@ -3794,12 +3794,12 @@ h4,
   white-space: nowrap;
 }
 
-.giftwave-sticky-atc__button:hover {
+.giftmira-sticky-atc__button:hover {
   opacity: 0.88;
 }
 
 @media screen and (min-width: 750px) {
-  .giftwave-sticky-atc {
+  .giftmira-sticky-atc {
     display: none !important;
   }
 }
