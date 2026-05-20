@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/GiftMira_Logo_79b9f1bb-0b98-4e2f-967d-e9a3550e55aa.png",
-    "logo_width": 200,
+    "logo": "shopify://shop_images/Hero___Ivory.png",
+    "logo_width": 170,
     "favicon": "shopify://shop_images/GiftMira_Favicon_512.png",
     "type_header_font": "garamond_n4",
     "heading_scale": 125,
@@ -229,11 +229,11 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FAF5E8",
+          "background": "#faf5e8",
           "background_gradient": "",
           "text": "#221912",
           "button": "#221912",
-          "button_label": "#F4ECDB",
+          "button_label": "#f4ecdb",
           "secondary_button_label": "#221912",
           "shadow": "#121212"
         }
@@ -244,7 +244,7 @@
           "background_gradient": "",
           "text": "#221912",
           "button": "#221912",
-          "button_label": "#F4ECDB",
+          "button_label": "#f4ecdb",
           "secondary_button_label": "#221912",
           "shadow": "#121212"
         }
@@ -264,31 +264,31 @@
         "settings": {
           "background": "#221912",
           "background_gradient": "",
-          "text": "#F4ECDB",
+          "text": "#f4ecdb",
           "button": "#221912",
-          "button_label": "#F4ECDB",
-          "secondary_button_label": "#D4A85A",
+          "button_label": "#f4ecdb",
+          "secondary_button_label": "#d4a85a",
           "shadow": "#121212"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#D4A85A",
+          "background": "#d4a85a",
           "background_gradient": "",
           "text": "#221912",
           "button": "#221912",
-          "button_label": "#F4ECDB",
+          "button_label": "#f4ecdb",
           "secondary_button_label": "#221912",
           "shadow": "#121212"
         }
       },
       "scheme-giftmira-about": {
         "settings": {
-          "background": "#FAF5E8",
+          "background": "#faf5e8",
           "background_gradient": "",
           "text": "#221912",
           "button": "#221912",
-          "button_label": "#F4ECDB",
+          "button_label": "#f4ecdb",
           "secondary_button_label": "#221912",
           "shadow": "#1c1c23"
         }
@@ -297,20 +297,20 @@
         "settings": {
           "background": "#221912",
           "background_gradient": "",
-          "text": "#F4ECDB",
-          "button": "#D4A85A",
+          "text": "#f4ecdb",
+          "button": "#d4a85a",
           "button_label": "#221912",
-          "secondary_button_label": "#F4ECDB",
+          "secondary_button_label": "#f4ecdb",
           "shadow": "#1c1c23"
         }
       },
       "scheme-giftmira-blush": {
         "settings": {
-          "background": "#FAF5E8",
+          "background": "#faf5e8",
           "background_gradient": "",
           "text": "#221912",
           "button": "#221912",
-          "button_label": "#F4ECDB",
+          "button_label": "#f4ecdb",
           "secondary_button_label": "#221912",
           "shadow": "#1c1c23"
         }
@@ -319,10 +319,10 @@
         "settings": {
           "background": "#221912",
           "background_gradient": "",
-          "text": "#F4ECDB",
-          "button": "#D4A85A",
+          "text": "#f4ecdb",
+          "button": "#d4a85a",
           "button_label": "#221912",
-          "secondary_button_label": "#F4ECDB",
+          "secondary_button_label": "#f4ecdb",
           "shadow": "#1c1c23"
         }
       },
@@ -330,10 +330,10 @@
         "settings": {
           "background": "#221912",
           "background_gradient": "",
-          "text": "#F4ECDB",
+          "text": "#f4ecdb",
           "button": "#221912",
-          "button_label": "#F4ECDB",
-          "secondary_button_label": "#D4A85A",
+          "button_label": "#f4ecdb",
+          "secondary_button_label": "#d4a85a",
           "shadow": "#121212"
         }
       }
