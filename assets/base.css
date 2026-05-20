@@ -3803,3 +3803,87 @@ h4,
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   GiftMira Brand System — v1.1
+   ========================================================================== */
+
+/* 6. CSS custom properties */
+:root {
+  --gm-espresso:       #221912;
+  --gm-espresso-soft:  #2D2218;
+  --gm-gold:           #D4A85A;
+  --gm-gold-deep:      #B58A3F;
+  --gm-cream:          #F4ECDB;
+  --gm-ivory:          #FAF5E8;
+  --gm-bronze:         #88735A;
+  --gm-font-display:   "DM Serif Display", Georgia, serif;
+  --gm-font-text:      "Manrope", system-ui, sans-serif;
+  --gm-font-mono:      "JetBrains Mono", "SF Mono", monospace;
+  --gm-track-caption:  0.32em;
+  --gm-radius-card:    2px;
+  --gm-radius-btn:     26px;
+
+  /* 1. Override heading font to DM Serif Display */
+  --font-heading-family: "DM Serif Display", Georgia, serif;
+  --font-heading-weight: 400;
+}
+
+/* 5. Headings: DM Serif Display at weight 400 */
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
+  font-family: var(--gm-font-display);
+  font-weight: 400;
+}
+
+/* 3. Link colors */
+a {
+  color: var(--gm-espresso);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--gm-gold-deep);
+  text-decoration: underline;
+}
+.rte a,
+.underlined-link,
+.customer a,
+.inline-richtext a {
+  color: var(--gm-gold-deep);
+}
+.rte a:hover,
+.underlined-link:hover,
+.customer a:hover,
+.inline-richtext a:hover {
+  color: var(--gm-espresso);
+}
+
+/* 4. Footer */
+.footer {
+  background-color: var(--gm-espresso) !important;
+  color: rgba(244, 236, 219, 0.80) !important; /* #F4ECDB at 80% */
+}
+.footer a,
+.footer__heading,
+.footer-block__heading {
+  color: var(--gm-gold) !important;
+}
+.footer a:hover {
+  color: var(--gm-cream) !important;
+  text-decoration: underline;
+}
+
+/* 7. Caption / eyebrow / overline */
+[class*="eyebrow"],
+[class*="caption"],
+[class*="overline"],
+[class*="label"],
+.caption,
+.eyebrow,
+.overline {
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-weight: 600;
+  font-family: var(--gm-font-text);
+  font-size: 11px;
+}
