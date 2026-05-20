@@ -52,7 +52,7 @@
         "color_scheme": "scheme-95da9aa2-849d-4358-97c5-6fa4e65feca5",
         "newsletter_enable": true,
         "newsletter_heading": "Get Exclusive Offers & Gift Ideas",
-        "enable_follow_on_shop": false,
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
