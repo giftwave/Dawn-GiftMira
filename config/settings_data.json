@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/GiftMira_Header_Logo_Ivory.png",
-    "logo_width": 280,
+    "logo": "shopify://shop_images/GiftMira_Header_Logo_Transparent_v2.png",
+    "logo_width": 300,
     "favicon": "shopify://shop_images/GiftMira_Favicon_New.png",
     "type_header_font": "garamond_n4",
     "heading_scale": 125,
