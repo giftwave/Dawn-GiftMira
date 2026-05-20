@@ -128,12 +128,6 @@
         "padding_bottom": 32
       }
     },
-    "1777278155914f6b7d": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
     "collection_list_fRHyPV": {
       "type": "collection-list",
       "blocks": {
@@ -292,55 +286,6 @@
         "padding_bottom": 36
       }
     },
-    "1774175202e0336afc": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "blocks_DjWeB7": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_d85268b_k6Ce3a": {
-          "type": "ai_gen_block_d85268b",
-          "settings": {
-            "layout": "container",
-            "title": "Shop By Occasion",
-            "title_size": 30,
-            "title_alignment": "left",
-            "title_color": "#2d2d2d",
-            "collections": [
-              "anniversary-gifts",
-              "gaming-gifts",
-              "gifts-for-friends",
-              "kitchen-foodie-gifts",
-              "home-decor-gifts",
-              "jewelry",
-              "music-lover-gifts",
-              "outdoor-adventure-gifts",
-              "self-care-wellness-gifts",
-              "thank-you-gifts",
-              "valentines-day-gifts",
-              "travel-gifts"
-            ],
-            "image_size": 90,
-            "spacing": 15,
-            "border_width": 1,
-            "border_color": "#fbefcc",
-            "image_background": "#fbefcc",
-            "name_size": 15,
-            "name_color": "#2d2d2d",
-            "hover_lift": 8,
-            "scrollbar_color": "#fbefcc"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_d85268b_k6Ce3a"
-      ],
-      "settings": {}
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -367,12 +312,6 @@
         "swipe_on_mobile": false,
         "padding_top": 32,
         "padding_bottom": 32
-      }
-    },
-    "17741752276ed8972f": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
       }
     },
     "featured_collection_bdczWN": {
@@ -427,14 +366,10 @@
     "image_banner",
     "17696046460a07d622",
     "featured_collection_6yJd8y",
-    "1777278155914f6b7d",
     "collection_list_fRHyPV",
     "featured_product_zUGmkL",
     "collection_list_fjdAnM",
-    "1774175202e0336afc",
-    "blocks_DjWeB7",
     "featured_collection",
-    "17741752276ed8972f",
     "featured_collection_bdczWN",
     "featured_blog_x43WxJ"
   ]

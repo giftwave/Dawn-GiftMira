@@ -12,7 +12,7 @@
     "logo": "shopify://shop_images/GiftMira_Header_Logo_Transparent_v2.png",
     "logo_width": 300,
     "favicon": "shopify://shop_images/GiftMira_Favicon_New.png",
-    "type_header_font": "garamond_n4",
+    "type_header_font": "dm_serif_display_n4",
     "heading_scale": 125,
     "type_body_font": "inter_n4",
     "body_scale": 100,
