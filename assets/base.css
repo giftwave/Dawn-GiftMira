@@ -3595,3 +3595,142 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* ==========================================================================
+   GiftMira Brand System — v2.0
+   Source of truth: GiftMira_Brand_Foundation.md
+   ========================================================================== */
+
+/* Brand tokens */
+:root {
+  --gm-charcoal:      #2A2018;
+  --gm-ivory:         #FAF8F1;
+  --gm-coral:         #FF6B6B;
+  --gm-gold:          #D4A853;
+  --gm-charcoal-text: #2D2D2D;
+  --gm-trust-green:   #22C55E;
+  --gm-font-display:  'EB Garamond', Georgia, serif;
+  --gm-font-body:     'Inter', system-ui, sans-serif;
+
+  /* Override Crave font variables */
+  --font-heading-family: 'EB Garamond', Georgia, serif;
+  --font-heading-weight: 700;
+  --font-body-family:    'Inter', system-ui, sans-serif;
+  --font-body-weight:    400;
+}
+
+/* Headings — EB Garamond Bold */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4,
+.hero__heading,
+.collection__title,
+.section-heading {
+  font-family: var(--gm-font-display);
+  font-weight: 700;
+}
+
+/* Body — Inter */
+body,
+p,
+.rte,
+.body {
+  font-family: var(--gm-font-body);
+  color: var(--gm-charcoal-text);
+}
+
+/* Page background — always Mira Ivory, never cold white */
+body {
+  background-color: var(--gm-ivory);
+}
+
+/* Links */
+a {
+  color: var(--gm-charcoal);
+}
+a:hover {
+  color: var(--gm-gold);
+}
+
+/* Primary CTA — Warm Coral */
+.button,
+.button--primary,
+[type="submit"],
+.product-form__submit {
+  background-color: var(--gm-coral) !important;
+  color: #FFFFFF !important;
+  border-color: var(--gm-coral) !important;
+  border-radius: 26px !important;
+}
+.button:hover,
+.button--primary:hover,
+.product-form__submit:hover {
+  background-color: #e55a5a !important;
+  border-color: #e55a5a !important;
+}
+
+/* Secondary button */
+.button--secondary {
+  background-color: transparent !important;
+  color: var(--gm-charcoal) !important;
+  border-color: var(--gm-charcoal) !important;
+  border-radius: 26px !important;
+}
+
+/* Nav / header background */
+.header {
+  background-color: var(--gm-charcoal);
+  color: var(--gm-ivory);
+}
+.header a,
+.header__heading-link,
+.header__menu-item {
+  color: var(--gm-ivory) !important;
+}
+.header a:hover,
+.header__menu-item:hover {
+  color: var(--gm-gold) !important;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--gm-charcoal) !important;
+  color: rgba(250, 248, 241, 0.80) !important;
+}
+.footer a,
+.footer__heading,
+.footer-block__heading {
+  color: var(--gm-gold) !important;
+}
+.footer a:hover {
+  color: var(--gm-ivory) !important;
+}
+
+/* Star ratings — Mira Gold */
+.rating-star,
+.jdgm-star,
+.judge-me-star,
+[class*="star"] svg {
+  color: var(--gm-gold);
+  fill: var(--gm-gold);
+}
+
+/* Trust Green — shipping/stock badges only */
+.badge--sold-out,
+.free-shipping-badge,
+.badge--in-stock {
+  background-color: var(--gm-trust-green);
+  color: #FFFFFF;
+}
+
+/* Caption / eyebrow / label — tracked uppercase */
+.caption,
+.eyebrow,
+.overline,
+[class*="caption"],
+[class*="eyebrow"] {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: var(--gm-font-body);
+  font-weight: 600;
+  font-size: 11px;
+}
