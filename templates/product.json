@@ -12,10 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "judge_me_reviews_preview_badge_yLnEzm": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -109,7 +105,6 @@
         }
       },
       "block_order": [
-        "judge_me_reviews_preview_badge_yLnEzm",
         "title",
         "price",
         "variant_picker",
@@ -142,26 +137,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "17691617421cb527df": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_FhthKE": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "hide_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_FhthKE"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "collapsible_content_UGwbaR": {
@@ -243,58 +218,11 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "176916483568fcd056": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7bb1984_ATBFp7": {
-          "type": "ai_gen_block_7bb1984",
-          "settings": {
-            "desktop_width_percent": 100,
-            "max_width": 1200,
-            "columns_desktop": 4,
-            "columns_tablet": 2,
-            "columns_mobile": "2",
-            "column_spacing": 20,
-            "item_padding": 20,
-            "icon_text_gap": 12,
-            "alignment": "center",
-            "background_color": "#FAF5E8",
-            "item_background_color": "#FAF5E8",
-            "icon_color": "#D4A85A",
-            "title_color": "#221912",
-            "text_color": "#221912",
-            "item_border_radius": 2,
-            "icon_size": 40,
-            "title_size": 16,
-            "text_size": 14,
-            "factor_1_enabled": true,
-            "factor_1_title": "Free Shipping",
-            "factor_1_text": "Free US delivery",
-            "factor_2_enabled": true,
-            "factor_2_title": "Fast Email Support",
-            "factor_2_text": "We're here to help",
-            "factor_3_enabled": true,
-            "factor_3_title": "Easy Returns",
-            "factor_3_text": "30 days, no hassle",
-            "factor_4_enabled": true,
-            "factor_4_title": "Secure Checkout",
-            "factor_4_text": "100% protected"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7bb1984_ATBFp7"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "main",
-    "17691617421cb527df",
     "collapsible_content_UGwbaR",
-    "related-products",
-    "176916483568fcd056"
+    "related-products"
   ]
 }
