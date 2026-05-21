@@ -1,0 +1,358 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "judge_me_reviews_preview_badge_yLnEzm": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "viewers_signal_tTTNyV": {
+          "type": "viewers_signal",
+          "settings": {
+            "viewers_min": 8,
+            "viewers_max": 28
+          }
+        },
+        "inventory_6GCGAM": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "subtitle",
+            "inventory_threshold": 13,
+            "show_inventory_quantity": false
+          }
+        },
+        "shipping_countdown_h3cLbF": {
+          "type": "shipping_countdown",
+          "settings": {
+            "store_timezone": "America/New_York",
+            "cutoff_hour": "17",
+            "delivery_min_days": "7",
+            "delivery_max_days": "20"
+          }
+        },
+        "wishlist_plus_wishlist_pdp_button_rBRwnM": {
+          "type": "shopify://apps/wishlist-plus/blocks/wishlist-pdp-button/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+          "settings": {
+            "swym_atw_button_icon": "heart",
+            "swym_atw_icon_thickness": 1.7,
+            "swym_atw_display_btn_text": false,
+            "swym_button_position": "add_to_cart_button_left",
+            "swym_atw_button_vertical_offset": 0,
+            "swym_atw_full_width": false,
+            "swym_atw_button_alignment": "center",
+            "swym_add_to_wishlist_color": "#D4A85A",
+            "swym_added_to_wishlist_color": "#B58A3F",
+            "swym_button_text_color": "#221912",
+            "swym_atw_border_color": "#221912",
+            "swym_atw_border_thickness": 1,
+            "swym_atw_button_border_radius": 26,
+            "swym_enable_hover_customization": true,
+            "swym_hover_add_to_wishlist_color": "#B58A3F",
+            "swym_hover_added_to_wishlist_color": "#221912",
+            "swym_hover_button_text_color": "#F4ECDB",
+            "swym_hover_atw_border_color": "#221912",
+            "swym_hover_atw_border_thickness": 1,
+            "swym_hover_atw_button_border_radius": 26,
+            "swym_custom_css": "/* Flex row layout for wishlist and add to cart buttons */\n.product-form__buttons-wrapper {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  width: 100%;\n}\n\n/* Wishlist button - compact, fixed width */\n.swym-button-content {\n  flex-shrink: 0;\n  min-width: auto;\n  width: auto;\n}\n\n.swym-button-content > button,\n.swym-button-content > [role=\"button\"],\n.swym-button-content > span,\n.swym-button-content > a {\n  width: auto;\n  padding: 12px 16px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n}\n\n/* Add to cart button - takes remaining space */\n.product-form__submit {\n  flex: 1;\n  width: 100%;\n}\n\n/* Ensure proper alignment on mobile */\n@media (max-width: 768px) {\n  .product-form__buttons-wrapper {\n    flex-direction: row;\n    gap: 10px;\n  }\n  \n  .swym-button-content > button,\n  .swym-button-content > [role=\"button\"],\n  .swym-button-content > span,\n  .swym-button-content > a {\n    padding: 10px 12px;\n    font-size: 13px;\n  }\n}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "quantity_breaks_X4c4YB": {
+          "type": "quantity_breaks",
+          "settings": {
+            "heading": "Save more when you buy more",
+            "tier2_discount": 10,
+            "tier3_discount": 15,
+            "tier4_discount": 20
+          }
+        },
+        "collapsible_tab_d697fp": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "eye",
+            "content": "<p>All orders qualify for <strong>Free Shipping</strong>.</p><p>Usually ships within 1–3 business days.</p><p>See all <a href=\"https://giftmira.com/policies/shipping-policy\" target=\"_blank\">shipping options and delivery times</a>.</p><p>We ship within the US only. We are unable to ship to APO, FPO, or DPO addresses at this time.</p><p><strong>Need to return?</strong> Returns are accepted within 30 days of delivery. See our <a href=\"https://giftmira.com/policies/refund-policy\" target=\"_blank\">return policy</a> for details.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_gyDDGw": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Details",
+            "icon": "clipboard",
+            "content": "{{ product.metafields.custom.specifications1 | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "occasion_cross_sell_3FjWyy": {
+          "type": "occasion_cross_sell",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_yLnEzm",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "viewers_signal_tTTNyV",
+        "inventory_6GCGAM",
+        "shipping_countdown_h3cLbF",
+        "wishlist_plus_wishlist_pdp_button_rBRwnM",
+        "buy_buttons",
+        "quantity_breaks_X4c4YB",
+        "collapsible_tab_d697fp",
+        "collapsible_tab_gyDDGw",
+        "description",
+        "share",
+        "occasion_cross_sell_3FjWyy"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "coupon_code": "save5",
+        "coupon_pill_label": "Save 5% on your first GiftMira order:",
+        "coupon_products": [],
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "17691617421cb527df": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_MQwemY": {
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "current_product",
+            "products": [],
+            "star_rating": "all",
+            "max_reviews": 20,
+            "quote_marks_size": "small",
+            "product_name_text_size": "small",
+            "verified_badge_style": "icon",
+            "card_height": "medium",
+            "text_size": "small",
+            "stars_size": "medium",
+            "arrows_position": "bottom",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "quote_marks_style": "serif",
+            "card_color": "#FAF5E8",
+            "stars_and_quote_marks_color": "#D4A85A",
+            "text_color": "#221912",
+            "arrows_color": "#221912",
+            "show_border": false,
+            "border_color": "#B58A3F",
+            "show_drop_shadow": false,
+            "transition_speed": 5,
+            "header_text": "What our customers say",
+            "show_average_rating": true
+          }
+        },
+        "judge_me_reviews_review_widget_FhthKE": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "hide_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_MQwemY",
+        "judge_me_reviews_review_widget_FhthKE"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "collapsible_content_UGwbaR": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_Frzb9G": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does it arrive gift-ready?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes — every GiftMira order is packaged to give, not just to ship. No extra wrapping required on your end.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yGX3TW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I include a personal message?",
+            "icon": "check_mark",
+            "row_content": "<p>Personal message cards aren't available at checkout yet, but your order arrives beautifully packaged and ready to give.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Jg3aad": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if it's not right?",
+            "icon": "check_mark",
+            "row_content": "<p>We'll sort it. Returns are accepted within 30 days of delivery — just reach out and we'll take care of the rest.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_7Xxn9e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will it arrive?",
+            "icon": "check_mark",
+            "row_content": "<p>Orders ship within 1–3 business days. Delivery typically takes 5–15 business days. You'll receive a tracking email as soon as your order is on its way.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_Frzb9G",
+        "collapsible_row_yGX3TW",
+        "collapsible_row_Jg3aad",
+        "collapsible_row_7Xxn9e"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "More to love",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "176916483568fcd056": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7bb1984_ATBFp7": {
+          "type": "ai_gen_block_7bb1984",
+          "settings": {
+            "desktop_width_percent": 100,
+            "max_width": 1200,
+            "columns_desktop": 4,
+            "columns_tablet": 2,
+            "columns_mobile": "2",
+            "column_spacing": 20,
+            "item_padding": 20,
+            "icon_text_gap": 12,
+            "alignment": "center",
+            "background_color": "#FAF5E8",
+            "item_background_color": "#FAF5E8",
+            "icon_color": "#D4A85A",
+            "title_color": "#221912",
+            "text_color": "#221912",
+            "item_border_radius": 2,
+            "icon_size": 40,
+            "title_size": 16,
+            "text_size": 14,
+            "factor_1_enabled": true,
+            "factor_1_title": "Free Shipping",
+            "factor_1_text": "Free US delivery",
+            "factor_2_enabled": true,
+            "factor_2_title": "Fast Email Support",
+            "factor_2_text": "We're here to help",
+            "factor_3_enabled": true,
+            "factor_3_title": "Easy Returns",
+            "factor_3_text": "30 days, no hassle",
+            "factor_4_enabled": true,
+            "factor_4_title": "Secure Checkout",
+            "factor_4_text": "100% protected"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7bb1984_ATBFp7"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "17691617421cb527df",
+    "collapsible_content_UGwbaR",
+    "related-products",
+    "176916483568fcd056"
+  ]
+}
