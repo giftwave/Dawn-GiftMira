@@ -24,14 +24,6 @@
       endif
     -%}
 
-    <p class="giftmira-guarantee-strip">
-      <span><span class="gw-check">✓</span> 30-Day Returns</span>
-      <span class="gw-sep">·</span>
-      <span><span class="gw-check">✓</span> Secure Checkout</span>
-      <span class="gw-sep">·</span>
-      <span><span class="gw-check">✓</span> Happiness Guaranteed</span>
-    </p>
-
     <product-form
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
@@ -107,23 +99,6 @@
         </div>
       {%- endform -%}
     </product-form>
-
-    <p class="giftmira-trust-bar">
-      <span><span class="gw-check">✓</span> Free Shipping</span>
-      <span class="gw-sep">·</span>
-      <span><span class="gw-check">✓</span> Easy Returns</span>
-      <span class="gw-sep">·</span>
-      <span><span class="gw-check">★</span> 2,200+ Reviews</span>
-    </p>
-
-    {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
-    <ul class="list list-payment giftmira-payment-icons" role="list" style="justify-content: center; margin-top: 10px;">
-      {%- for type in shop.enabled_payment_types -%}
-        <li class="list-payment__item">
-          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-        </li>
-      {%- endfor -%}
-    </ul>
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">

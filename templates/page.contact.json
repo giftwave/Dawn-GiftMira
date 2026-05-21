@@ -1,1 +1,25 @@
-{"sections":{"main":{"type":"main-page","settings":{"padding_top":36,"padding_bottom":36}},"form":{"type":"contact-form","settings":{"heading":"","heading_size":"h1","color_scheme":"scheme-1","padding_top":36,"padding_bottom":36}},"collapsible_content_EiQQzC":{"type":"collapsible-content","blocks":{"collapsible_row_Phr69h":{"type":"collapsible_row","settings":{"heading":"Is my payment secure?","icon":"check_mark","row_content":"<p>Rest assured, your payment is fully secure. We prioritize your safety with industry-leading SSL encryption, ensuring a trustworthy checkout experience.<\/p>","page":""}},"collapsible_row_krmVzT":{"type":"collapsible_row","settings":{"heading":"What payment methods do you accept?","icon":"check_mark","row_content":"<p>We accept all major credit cards and payments via Visa, Mastercard, Amex, Discover, Dinners Club, Google Pay, Apple Pay, Amazon Pay, PayPal, Shop Pay, Shop Instalments.<\/p>","page":""}},"collapsible_row_CPiBW9":{"type":"collapsible_row","settings":{"heading":"Is there a shipping fee?","icon":"check_mark","row_content":"<p>Shipping is entirely free for every US order. Your delivery will arrive at your door via USPS with no extra charges.<\/p>","page":""}},"collapsible_row_UqxEiR":{"type":"collapsible_row","settings":{"heading":"How can I track my order?","icon":"check_mark","row_content":"<p>Stop by our 'Track & Manage' page for the latest on your delivery. Receive a shipping confirmation email with a link to track your parcel and stay informed. Find it in our Footer or simply log in.<\/p>","page":""}}},"block_order":["collapsible_row_Phr69h","collapsible_row_krmVzT","collapsible_row_CPiBW9","collapsible_row_UqxEiR"],"name":"t:sections.collapsible_content.presets.name","settings":{"caption":"","heading":"Frequently Asked Questions","heading_size":"h1","heading_alignment":"center","layout":"none","container_color_scheme":"","color_scheme":"","open_first_collapsible_row":false,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":36,"padding_bottom":36}},"blocks_MwxhwL":{"type":"_blocks","name":"Trust factors","settings":{}}},"order":["main","form","collapsible_content_EiQQzC","blocks_MwxhwL"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact-form"
+  ]
+}
