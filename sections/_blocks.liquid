@@ -1,0 +1,22 @@
+{{ content_for_blocks }}
+
+{% schema %}
+{
+  "name": "Custom blocks",
+  "tag": "div",
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "@theme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom blocks"
+    }
+  ]
+}
+{% endschema %}

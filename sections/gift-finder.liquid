@@ -1,0 +1,920 @@
+<style>
+  .gm-gf-section {
+    padding: 4rem 1.5rem 6rem;
+    background: rgb(var(--color-background));
+  }
+
+  .gm-gf-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .gm-gf-header {
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  .gm-gf-header h1 {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    color: rgb(var(--color-foreground));
+    margin: 0 0 0.8rem;
+  }
+
+  .gm-gf-header p {
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    color: rgba(var(--color-foreground), 0.65);
+    margin: 0;
+  }
+
+  /* Progress bar */
+  .gm-gf-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .gm-gf-progress__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.2);
+    transition: background 0.2s ease;
+  }
+
+  .gm-gf-progress__dot.active {
+    background: #D4A853;
+    transform: scale(1.25);
+  }
+
+  .gm-gf-progress__dot.done {
+    background: #22C55E;
+  }
+
+  .gm-gf-progress__label {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.5);
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  /* Step */
+  .gm-gf-step {
+    display: none;
+  }
+
+  .gm-gf-step.active {
+    display: block;
+    animation: gm-gf-fade-in 0.25s ease;
+  }
+
+  @keyframes gm-gf-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .gm-gf-step__heading {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: rgb(var(--color-foreground));
+    text-align: center;
+    margin: 0 0 2.4rem;
+  }
+
+  /* Option cards grid */
+  .gm-gf-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .gm-gf-options {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+  }
+
+  .gm-gf-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.6rem 0.8rem;
+    background: rgb(var(--color-background));
+    border: 2px solid rgba(var(--color-foreground), 0.12);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+    user-select: none;
+    min-height: 100px;
+  }
+
+  .gm-gf-option:hover {
+    border-color: rgba(212, 168, 83, 0.6);
+    box-shadow: 0 2px 12px rgba(212, 168, 83, 0.14);
+  }
+
+  .gm-gf-option.selected {
+    border-color: #D4A853;
+    background: rgba(212, 168, 83, 0.08);
+    box-shadow: 0 2px 12px rgba(212, 168, 83, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .gm-gf-option__icon {
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+
+  .gm-gf-option__label {
+    font-family: var(--font-body-family);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: rgb(var(--color-foreground));
+    line-height: 1.3;
+  }
+
+  /* Budget pills */
+  .gm-gf-budget {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .gm-gf-budget-pill {
+    padding: 1rem 2.4rem;
+    border: 2px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 40px;
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+
+  .gm-gf-budget-pill:hover {
+    border-color: #D4A853;
+  }
+
+  .gm-gf-budget-pill.selected {
+    border-color: #2A2018;
+    background: #2A2018;
+    color: #FAF8F1;
+  }
+
+  /* Navigation buttons */
+  .gm-gf-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .gm-gf-nav--center {
+    justify-content: center;
+  }
+
+  .gm-gf-btn {
+    padding: 1.2rem 2.8rem;
+    border-radius: 26px;
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .gm-gf-btn:hover {
+    opacity: 0.88;
+  }
+
+  .gm-gf-btn--primary {
+    background: #FF6B6B;
+    color: #ffffff;
+    flex: 1;
+  }
+
+  .gm-gf-btn--secondary {
+    background: transparent;
+    color: rgba(var(--color-foreground), 0.6);
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .gm-gf-btn--find {
+    background: #FF6B6B;
+    color: #ffffff;
+    width: 100%;
+    font-size: 1.7rem;
+    padding: 1.4rem 2rem;
+  }
+
+  .gm-gf-skip {
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+
+  .gm-gf-skip a {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.5);
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  /* Loading state */
+  .gm-gf-loading {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .gm-gf-loading.active {
+    display: flex;
+  }
+
+  .gm-gf-spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 3px solid rgba(var(--color-foreground), 0.1);
+    border-top-color: #D4A853;
+    border-radius: 50%;
+    animation: gm-gf-spin 0.7s linear infinite;
+    margin-bottom: 1.6rem;
+  }
+
+  @keyframes gm-gf-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .gm-gf-loading p {
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin: 0;
+  }
+
+  /* Interest chips in results */
+  .gm-gf-interest-chips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.4rem 0 0;
+  }
+
+  .gm-gf-interest-chips__label {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-right: 0.2rem;
+  }
+
+  .gm-gf-interest-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    border: 1.5px solid rgba(var(--color-foreground), 0.18);
+    font-family: var(--font-body-family);
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+    user-select: none;
+  }
+
+  .gm-gf-interest-chip:hover {
+    border-color: #D4A853;
+  }
+
+  .gm-gf-interest-chip.active {
+    border-color: #D4A853;
+    background: #D4A853;
+    color: #2A2018;
+    font-weight: 600;
+  }
+
+  /* Results */
+  .gm-gf-results {
+    display: none;
+    margin-top: 0;
+  }
+
+  .gm-gf-results.active {
+    display: block;
+    animation: gm-gf-fade-in 0.3s ease;
+  }
+
+  .gm-gf-results__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+
+  .gm-gf-results__title {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: rgb(var(--color-foreground));
+    margin: 0 0 0.8rem;
+  }
+
+  .gm-gf-results__subtitle {
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin: 0 0 1.6rem;
+  }
+
+  .gm-gf-results__restart {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    color: #D4A853;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .gm-gf-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .gm-gf-product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .gm-gf-product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .gm-gf-product-card {
+    display: flex;
+    flex-direction: column;
+    background: rgb(var(--color-background));
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .gm-gf-product-card:hover .gm-gf-product-image {
+    transform: scale(1.03);
+  }
+
+  .gm-gf-product-image-wrap {
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.04);
+    aspect-ratio: 1 / 1;
+    margin-bottom: 1rem;
+  }
+
+  .gm-gf-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .gm-gf-product-title {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: rgb(var(--color-foreground));
+    margin: 0 0 0.4rem;
+    line-height: 1.4;
+  }
+
+  .gm-gf-product-price {
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(var(--color-foreground));
+    margin: 0;
+  }
+
+  .gm-gf-no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    display: none;
+  }
+
+  .gm-gf-no-results.active {
+    display: block;
+  }
+
+  .gm-gf-no-results p {
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin-bottom: 2rem;
+  }
+</style>
+
+<div class="gm-gf-section">
+  <div class="gm-gf-wrapper">
+
+    <!-- Header -->
+    <div class="gm-gf-header">
+      <h1>Find the Perfect Gift</h1>
+      <p>Answer 4 quick questions and we'll find exactly what they'll love.</p>
+    </div>
+
+    <!-- Quiz container -->
+    <div id="gm-gf-quiz">
+
+      <!-- Progress -->
+      <div class="gm-gf-progress" id="gm-gf-progress-dots">
+        <span class="gm-gf-progress__dot active" data-step="1"></span>
+        <span class="gm-gf-progress__dot" data-step="2"></span>
+        <span class="gm-gf-progress__dot" data-step="3"></span>
+        <span class="gm-gf-progress__dot" data-step="4"></span>
+      </div>
+      <p class="gm-gf-progress__label" id="gm-gf-step-label">Step 1 of 4</p>
+
+      <!-- Step 1: Who is it for? -->
+      <div class="gm-gf-step active" data-step="1">
+        <h2 class="gm-gf-step__heading">Who are you shopping for?</h2>
+        <div class="gm-gf-options" id="gm-gf-recipient-options">
+          <div class="gm-gf-option" data-value="partner">
+            <span class="gm-gf-option__icon">💑</span>
+            <span class="gm-gf-option__label">Partner</span>
+          </div>
+          <div class="gm-gf-option" data-value="parent">
+            <span class="gm-gf-option__icon">👨‍👩‍👧</span>
+            <span class="gm-gf-option__label">Parent</span>
+          </div>
+          <div class="gm-gf-option" data-value="friend">
+            <span class="gm-gf-option__icon">👯</span>
+            <span class="gm-gf-option__label">Friend</span>
+          </div>
+          <div class="gm-gf-option" data-value="sibling">
+            <span class="gm-gf-option__icon">👫</span>
+            <span class="gm-gf-option__label">Sibling</span>
+          </div>
+          <div class="gm-gf-option" data-value="child">
+            <span class="gm-gf-option__icon">🧒</span>
+            <span class="gm-gf-option__label">Child</span>
+          </div>
+          <div class="gm-gf-option" data-value="coworker">
+            <span class="gm-gf-option__icon">🤝</span>
+            <span class="gm-gf-option__label">Coworker</span>
+          </div>
+        </div>
+        <div class="gm-gf-nav gm-gf-nav--center">
+          <button class="gm-gf-btn gm-gf-btn--primary" id="gm-gf-next-1" disabled>Next →</button>
+        </div>
+        <div class="gm-gf-skip"><a onclick="GiftMiraFinder.skip(1)">Skip this question</a></div>
+      </div>
+
+      <!-- Step 2: What's the occasion? -->
+      <div class="gm-gf-step" data-step="2">
+        <h2 class="gm-gf-step__heading">What's the occasion?</h2>
+        <div class="gm-gf-options" id="gm-gf-occasion-options">
+          <div class="gm-gf-option" data-value="birthday">
+            <span class="gm-gf-option__icon">🎂</span>
+            <span class="gm-gf-option__label">Birthday</span>
+          </div>
+          <div class="gm-gf-option" data-value="anniversary">
+            <span class="gm-gf-option__icon">💍</span>
+            <span class="gm-gf-option__label">Anniversary</span>
+          </div>
+          <div class="gm-gf-option" data-value="just-because">
+            <span class="gm-gf-option__icon">🎁</span>
+            <span class="gm-gf-option__label">Just Because</span>
+          </div>
+          <div class="gm-gf-option" data-value="holiday">
+            <span class="gm-gf-option__icon">🎄</span>
+            <span class="gm-gf-option__label">Holiday</span>
+          </div>
+          <div class="gm-gf-option" data-value="graduation">
+            <span class="gm-gf-option__icon">🎓</span>
+            <span class="gm-gf-option__label">Graduation</span>
+          </div>
+          <div class="gm-gf-option" data-value="thank-you">
+            <span class="gm-gf-option__icon">🙏</span>
+            <span class="gm-gf-option__label">Thank You</span>
+          </div>
+        </div>
+        <div class="gm-gf-nav">
+          <button class="gm-gf-btn gm-gf-btn--secondary" onclick="GiftMiraFinder.goTo(1)">← Back</button>
+          <button class="gm-gf-btn gm-gf-btn--primary" id="gm-gf-next-2" disabled>Next →</button>
+        </div>
+        <div class="gm-gf-skip"><a onclick="GiftMiraFinder.skip(2)">Skip this question</a></div>
+      </div>
+
+      <!-- Step 3: What are their interests? (multi-select) -->
+      <div class="gm-gf-step" data-step="3">
+        <h2 class="gm-gf-step__heading">What are they into? <span style="font-size: 1.4rem; font-weight: 400; color: rgba(var(--color-foreground), 0.5);">Select as many as you like</span></h2>
+        <div class="gm-gf-options" id="gm-gf-interest-options">
+          <div class="gm-gf-option" data-value="tech-gadget-gifts">
+            <span class="gm-gf-option__icon">🤖</span>
+            <span class="gm-gf-option__label">Tech & Gadgets</span>
+          </div>
+          <div class="gm-gf-option" data-value="home-decor-gifts">
+            <span class="gm-gf-option__icon">🏠</span>
+            <span class="gm-gf-option__label">Home & Decor</span>
+          </div>
+          <div class="gm-gf-option" data-value="outdoor-adventure-gifts">
+            <span class="gm-gf-option__icon">🏕️</span>
+            <span class="gm-gf-option__label">Outdoors</span>
+          </div>
+          <div class="gm-gf-option" data-value="gaming-gifts">
+            <span class="gm-gf-option__icon">🎮</span>
+            <span class="gm-gf-option__label">Gaming</span>
+          </div>
+          <div class="gm-gf-option" data-value="jewelry">
+            <span class="gm-gf-option__icon">💎</span>
+            <span class="gm-gf-option__label">Jewelry</span>
+          </div>
+          <div class="gm-gf-option" data-value="gifts-for-her">
+            <span class="gm-gf-option__icon">💐</span>
+            <span class="gm-gf-option__label">For Her</span>
+          </div>
+          <div class="gm-gf-option" data-value="gifts-for-him">
+            <span class="gm-gf-option__icon">🎯</span>
+            <span class="gm-gf-option__label">For Him</span>
+          </div>
+          <div class="gm-gf-option" data-value="best-sellers">
+            <span class="gm-gf-option__icon">⭐</span>
+            <span class="gm-gf-option__label">Fan Favourites</span>
+          </div>
+          <div class="gm-gf-option" data-value="luxury-gifts">
+            <span class="gm-gf-option__icon">✨</span>
+            <span class="gm-gf-option__label">Luxury</span>
+          </div>
+        </div>
+        <div class="gm-gf-nav">
+          <button class="gm-gf-btn gm-gf-btn--secondary" onclick="GiftMiraFinder.goTo(2)">← Back</button>
+          <button class="gm-gf-btn gm-gf-btn--primary" id="gm-gf-next-3">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Budget -->
+      <div class="gm-gf-step" data-step="4">
+        <h2 class="gm-gf-step__heading">What's your budget?</h2>
+        <div class="gm-gf-budget" id="gm-gf-budget-options">
+          <button class="gm-gf-budget-pill" data-min="0" data-max="5000">Under $50</button>
+          <button class="gm-gf-budget-pill" data-min="5000" data-max="10000">$50 – $100</button>
+          <button class="gm-gf-budget-pill" data-min="10000" data-max="20000">$100 – $200</button>
+          <button class="gm-gf-budget-pill" data-min="20000" data-max="999999">$200+</button>
+          <button class="gm-gf-budget-pill" data-min="0" data-max="999999">Any Budget</button>
+        </div>
+        <div class="gm-gf-nav">
+          <button class="gm-gf-btn gm-gf-btn--secondary" onclick="GiftMiraFinder.goTo(3)">← Back</button>
+          <button class="gm-gf-btn gm-gf-btn--find" id="gm-gf-find-btn" disabled>Find Their Gift ✨</button>
+        </div>
+      </div>
+
+    </div><!-- end gm-gf-quiz -->
+
+    <!-- Loading state -->
+    <div class="gm-gf-loading" id="gm-gf-loading">
+      <div class="gm-gf-spinner"></div>
+      <p>Finding gifts they'll actually love…</p>
+    </div>
+
+    <!-- No results -->
+    <div class="gm-gf-no-results" id="gm-gf-no-results">
+      <p>Nothing matched that budget — try widening your range.</p>
+      <button class="gm-gf-btn gm-gf-btn--secondary" onclick="GiftMiraFinder.restart()">← Start Over</button>
+    </div>
+
+    <!-- Results -->
+    <div class="gm-gf-results" id="gm-gf-results">
+      <div class="gm-gf-results__header">
+        <h2 class="gm-gf-results__title" id="gm-gf-results-title">We found gifts they'll love</h2>
+        <p class="gm-gf-results__subtitle" id="gm-gf-results-subtitle"></p>
+        <div class="gm-gf-interest-chips" id="gm-gf-result-interest-chips"></div>
+        <button class="gm-gf-results__restart" onclick="GiftMiraFinder.restart()">← Start over</button>
+      </div>
+      <div class="gm-gf-product-grid" id="gm-gf-product-grid"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var GiftMiraFinder = (function () {
+  var state = {
+    step: 1,
+    recipient: null,
+    occasion: null,
+    interests: [],
+    budgetMin: 0,
+    budgetMax: 999999
+  };
+
+  var recipientLabels = {
+    partner: 'your partner', parent: 'a parent', friend: 'a friend',
+    sibling: 'a sibling', child: 'a child', coworker: 'a coworker'
+  };
+
+  var ALL_COLLECTIONS = [
+    'tech-gadget-gifts', 'home-decor-gifts', 'outdoor-adventure-gifts',
+    'gaming-gifts', 'jewelry', 'gifts-for-her', 'gifts-for-him',
+    'best-sellers', 'luxury-gifts'
+  ];
+
+  var interestToCollections = {
+    'tech-gadget-gifts':       ['tech-gadget-gifts'],
+    'home-decor-gifts':        ['home-decor-gifts'],
+    'outdoor-adventure-gifts': ['outdoor-adventure-gifts'],
+    'gaming-gifts':            ['gaming-gifts'],
+    'jewelry':                 ['jewelry'],
+    'gifts-for-her':           ['gifts-for-her'],
+    'gifts-for-him':           ['gifts-for-him'],
+    'best-sellers':            ['best-sellers'],
+    'luxury-gifts':            ['luxury-gifts']
+  };
+
+  function init() {
+    bindSingleSelect('gm-gf-recipient-options', function (val) {
+      state.recipient = val;
+      document.getElementById('gm-gf-next-1').disabled = false;
+    });
+
+    bindSingleSelect('gm-gf-occasion-options', function (val) {
+      state.occasion = val;
+      document.getElementById('gm-gf-next-2').disabled = false;
+    });
+
+    bindMultiSelect('gm-gf-interest-options', function (vals) {
+      state.interests = vals;
+    });
+
+    document.querySelectorAll('.gm-gf-budget-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        document.querySelectorAll('.gm-gf-budget-pill').forEach(function (p) { p.classList.remove('selected'); });
+        pill.classList.add('selected');
+        state.budgetMin = parseInt(pill.dataset.min);
+        state.budgetMax = parseInt(pill.dataset.max);
+        document.getElementById('gm-gf-find-btn').disabled = false;
+      });
+    });
+
+    document.getElementById('gm-gf-next-1').addEventListener('click', function () { goTo(2); });
+    document.getElementById('gm-gf-next-2').addEventListener('click', function () { goTo(3); });
+    document.getElementById('gm-gf-next-3').addEventListener('click', function () { goTo(4); });
+    document.getElementById('gm-gf-find-btn').addEventListener('click', findGifts);
+  }
+
+  function bindSingleSelect(containerId, onChange) {
+    document.getElementById(containerId).querySelectorAll('.gm-gf-option').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        document.getElementById(containerId).querySelectorAll('.gm-gf-option').forEach(function (o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        onChange(opt.dataset.value);
+      });
+    });
+  }
+
+  function bindMultiSelect(containerId, onChange) {
+    document.getElementById(containerId).querySelectorAll('.gm-gf-option').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        opt.classList.toggle('selected');
+        var selected = Array.from(document.getElementById(containerId).querySelectorAll('.gm-gf-option.selected')).map(function (o) { return o.dataset.value; });
+        onChange(selected);
+      });
+    });
+  }
+
+  function goTo(step) {
+    document.querySelectorAll('.gm-gf-step').forEach(function (s) { s.classList.remove('active'); });
+    document.querySelector('.gm-gf-step[data-step="' + step + '"]').classList.add('active');
+    state.step = step;
+    updateProgress();
+    window.scrollTo({ top: document.querySelector('.gm-gf-section').offsetTop - 80, behavior: 'smooth' });
+  }
+
+  function updateProgress() {
+    document.getElementById('gm-gf-step-label').textContent = 'Step ' + state.step + ' of 4';
+    document.querySelectorAll('.gm-gf-progress__dot').forEach(function (dot) {
+      var dotStep = parseInt(dot.dataset.step);
+      dot.classList.remove('active', 'done');
+      if (dotStep === state.step) dot.classList.add('active');
+      else if (dotStep < state.step) dot.classList.add('done');
+    });
+  }
+
+  function skip(currentStep) {
+    if (currentStep === 1) state.recipient = null;
+    if (currentStep === 2) state.occasion = null;
+    if (currentStep === 3) state.interests = [];
+    if (currentStep < 4) goTo(currentStep + 1);
+    else findGifts();
+  }
+
+  async function findGifts(keepQuizHidden) {
+    if (!keepQuizHidden) {
+      document.getElementById('gm-gf-quiz').style.display = 'none';
+    }
+    document.getElementById('gm-gf-loading').classList.add('active');
+    document.getElementById('gm-gf-results').classList.remove('active');
+    document.getElementById('gm-gf-no-results').classList.remove('active');
+
+    try {
+      var collections;
+      if (state.interests.length > 0) {
+        collections = [];
+        state.interests.forEach(function (interest) {
+          (interestToCollections[interest] || []).forEach(function (c) {
+            if (collections.indexOf(c) === -1) collections.push(c);
+          });
+        });
+        if (collections.length === 0) collections = ALL_COLLECTIONS.slice();
+      } else {
+        collections = ALL_COLLECTIONS.slice();
+      }
+
+      var allProducts = [];
+      var seen = {};
+
+      for (var i = 0; i < collections.length; i++) {
+        var handle = collections[i];
+        try {
+          var res = await fetch('/collections/' + handle + '/products.json?limit=250');
+          if (!res.ok) continue;
+          var data = await res.json();
+          (data.products || []).forEach(function (p) {
+            if (!seen[p.id]) {
+              seen[p.id] = true;
+              allProducts.push(p);
+            }
+          });
+        } catch (e) { /* skip failed collection */ }
+      }
+
+      var filtered = allProducts.filter(function (p) {
+        var price = parseInt(p.variants && p.variants[0] ? p.variants[0].price * 100 : 0);
+        return price >= state.budgetMin && price <= state.budgetMax;
+      });
+
+      filtered = filtered.sort(function () { return Math.random() - 0.5; });
+      var toShow = filtered.slice(0, 12);
+
+      document.getElementById('gm-gf-loading').classList.remove('active');
+
+      if (toShow.length === 0) {
+        document.getElementById('gm-gf-no-results').classList.add('active');
+        return;
+      }
+
+      renderResults(toShow, allProducts.length, filtered.length);
+    } catch (err) {
+      document.getElementById('gm-gf-loading').classList.remove('active');
+      document.getElementById('gm-gf-no-results').classList.add('active');
+    }
+  }
+
+  var allInterestOptions = [
+    { value: 'tech-gadget-gifts',       icon: '🤖', label: 'Tech & Gadgets' },
+    { value: 'home-decor-gifts',        icon: '🏠', label: 'Home & Decor' },
+    { value: 'outdoor-adventure-gifts', icon: '🏕️', label: 'Outdoors' },
+    { value: 'gaming-gifts',            icon: '🎮', label: 'Gaming' },
+    { value: 'jewelry',                 icon: '💎', label: 'Jewelry' },
+    { value: 'gifts-for-her',           icon: '💐', label: 'For Her' },
+    { value: 'gifts-for-him',           icon: '🎯', label: 'For Him' },
+    { value: 'best-sellers',            icon: '⭐', label: 'Fan Favourites' },
+    { value: 'luxury-gifts',            icon: '✨', label: 'Luxury' }
+  ];
+
+  function renderInterestChips() {
+    var container = document.getElementById('gm-gf-result-interest-chips');
+    if (!container) return;
+
+    var label = document.createElement('span');
+    label.className = 'gm-gf-interest-chips__label';
+    label.textContent = 'Interests:';
+    container.innerHTML = '';
+    container.appendChild(label);
+
+    allInterestOptions.forEach(function (opt) {
+      var chip = document.createElement('button');
+      chip.className = 'gm-gf-interest-chip' + (state.interests.indexOf(opt.value) !== -1 ? ' active' : '');
+      chip.textContent = opt.icon + ' ' + opt.label;
+      chip.addEventListener('click', function () {
+        var idx = state.interests.indexOf(opt.value);
+        if (idx !== -1) {
+          state.interests.splice(idx, 1);
+        } else {
+          state.interests.push(opt.value);
+        }
+        chip.classList.toggle('active');
+        document.getElementById('gm-gf-product-grid').innerHTML = '';
+        var loadingEl = document.getElementById('gm-gf-loading');
+        document.getElementById('gm-gf-results').classList.remove('active');
+        loadingEl.classList.add('active');
+        findGifts(true);
+      });
+      container.appendChild(chip);
+    });
+  }
+
+  function renderResults(products, totalFetched, filteredCount) {
+    var recipientLabel = state.recipient ? recipientLabels[state.recipient] : 'them';
+    var countLabel = filteredCount > 12 ? '12+ gifts' : filteredCount + ' gift' + (filteredCount !== 1 ? 's' : '');
+
+    document.getElementById('gm-gf-results-title').textContent = 'We found ' + countLabel + ' for ' + recipientLabel;
+    document.getElementById('gm-gf-results-subtitle').textContent = state.occasion
+      ? 'Perfect for ' + state.occasion.replace(/-/g, ' ') + ' — curated just for you.'
+      : 'Curated just for you.';
+
+    var grid = document.getElementById('gm-gf-product-grid');
+    grid.innerHTML = '';
+
+    products.forEach(function (product) {
+      var img = product.images && product.images[0] ? product.images[0].src : null;
+      var price = product.variants && product.variants[0] ? parseFloat(product.variants[0].price) : 0;
+      var priceFormatted = '$' + price.toFixed(2).replace(/\.00$/, '');
+
+      var card = document.createElement('a');
+      card.href = '/products/' + product.handle;
+      card.className = 'gm-gf-product-card';
+      card.innerHTML = '<div class="gm-gf-product-image-wrap">'
+        + (img ? '<img class="gm-gf-product-image" src="' + img.replace(/\.(jpg|png|gif|webp)/, '_400x400.$1') + '" alt="' + escapeHtml(product.title) + '" loading="lazy">' : '<div class="gm-gf-product-image" style="background: rgba(var(--color-foreground),0.06)"></div>')
+        + '</div>'
+        + '<p class="gm-gf-product-title">' + escapeHtml(product.title) + '</p>'
+        + '<p class="gm-gf-product-price">' + priceFormatted + '</p>';
+
+      grid.appendChild(card);
+    });
+
+    renderInterestChips();
+    document.getElementById('gm-gf-results').classList.add('active');
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function restart() {
+    state = { step: 1, recipient: null, occasion: null, interests: [], budgetMin: 0, budgetMax: 999999 };
+    document.querySelectorAll('.gm-gf-option').forEach(function (o) { o.classList.remove('selected'); });
+    document.querySelectorAll('.gm-gf-budget-pill').forEach(function (p) { p.classList.remove('selected'); });
+    document.getElementById('gm-gf-next-1').disabled = true;
+    document.getElementById('gm-gf-next-2').disabled = true;
+    document.getElementById('gm-gf-find-btn').disabled = true;
+    document.getElementById('gm-gf-results').classList.remove('active');
+    document.getElementById('gm-gf-no-results').classList.remove('active');
+    document.getElementById('gm-gf-quiz').style.display = '';
+    goTo(1);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  return { goTo: goTo, skip: skip, restart: restart };
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Gift Finder",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gift Finder"
+    }
+  ]
+}
+{% endschema %}
