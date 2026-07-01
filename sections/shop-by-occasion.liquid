@@ -1,0 +1,429 @@
+{% comment %}
+  GiftMira — Shop by Category
+  Circular collection badges with Mira Gold hover ring, EB Garamond heading,
+  gold hairline divider, and scroll-snap row. Sits on Warm Ivory.
+{% endcomment %}
+
+{%- style -%}
+  .gm-cat-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .gm-cat-{{ section.id }}__header {
+    text-align: center;
+    margin: 0 auto 34px;
+    max-width: 640px;
+  }
+
+  .gm-cat-{{ section.id }}__title {
+    font-family: var(--font-heading-family);
+    font-weight: 700;
+    font-size: {{ section.settings.title_size }}px;
+    line-height: 1.15;
+    color: {{ section.settings.title_color }};
+    margin: 0;
+  }
+
+  .gm-cat-{{ section.id }}__divider {
+    width: 48px;
+    height: 2px;
+    background-color: {{ section.settings.accent_color }};
+    border: 0;
+    margin: 14px auto;
+  }
+
+  .gm-cat-{{ section.id }}__subtitle {
+    font-family: var(--font-body-family);
+    font-style: italic;
+    font-size: {{ section.settings.subtitle_size }}px;
+    line-height: 1.5;
+    color: {{ section.settings.subtitle_color }};
+    margin: 0;
+  }
+
+  .gm-cat-{{ section.id }}__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: {{ section.settings.spacing }}px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 4px 18px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: {{ section.settings.accent_color }} transparent;
+  }
+
+  .gm-cat-{{ section.id }}__list::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .gm-cat-{{ section.id }}__list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .gm-cat-{{ section.id }}__list::-webkit-scrollbar-thumb {
+    background-color: {{ section.settings.accent_color }};
+    border-radius: 4px;
+  }
+
+  .gm-cat-{{ section.id }}__item {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+  }
+
+  .gm-cat-{{ section.id }}__item:hover {
+    transform: translateY(-{{ section.settings.hover_lift }}px);
+  }
+
+  .gm-cat-{{ section.id }}__media {
+    width: {{ section.settings.image_size }}px;
+    height: {{ section.settings.image_size }}px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    background-color: {{ section.settings.image_background }};
+    flex-shrink: 0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gm-cat-{{ section.id }}__item:hover .gm-cat-{{ section.id }}__media {
+    border-color: {{ section.settings.accent_color }};
+    box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.35);
+  }
+
+  .gm-cat-{{ section.id }}__item:focus-visible {
+    outline: none;
+  }
+
+  .gm-cat-{{ section.id }}__item:focus-visible .gm-cat-{{ section.id }}__media {
+    border-color: {{ section.settings.accent_color }};
+    box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.6);
+  }
+
+  .gm-cat-{{ section.id }}__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gm-cat-{{ section.id }}__item:hover .gm-cat-{{ section.id }}__img {
+    transform: scale(1.06);
+  }
+
+  .gm-cat-{{ section.id }}__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gm-cat-{{ section.id }}__placeholder svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.25;
+  }
+
+  .gm-cat-{{ section.id }}__name {
+    font-family: var(--font-body-family);
+    font-size: {{ section.settings.name_size }}px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: {{ section.settings.name_color }};
+    text-align: center;
+    max-width: {{ section.settings.image_size | plus: 20 }}px;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+  }
+
+  .gm-cat-{{ section.id }}__item:hover .gm-cat-{{ section.id }}__name {
+    color: {{ section.settings.accent_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .gm-cat-{{ section.id }}__list {
+      justify-content: flex-start;
+    }
+
+    .gm-cat-{{ section.id }}__media {
+      width: {{ section.settings.image_size | times: 0.8 | round: 0 }}px;
+      height: {{ section.settings.image_size | times: 0.8 | round: 0 }}px;
+    }
+
+    .gm-cat-{{ section.id }}__name {
+      max-width: {{ section.settings.image_size | times: 0.8 | round: 0 | plus: 16 }}px;
+      font-size: {{ section.settings.name_size | times: 0.95 | round: 0 }}px;
+    }
+
+    .gm-cat-{{ section.id }}__title {
+      font-size: {{ section.settings.title_size | times: 0.82 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width gm-cat-{{ section.id }}">
+    {%- if section.settings.title != blank or section.settings.subtitle != blank -%}
+      <div class="gm-cat-{{ section.id }}__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.title != blank -%}
+          <h2 class="gm-cat-{{ section.id }}__title">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.show_divider -%}
+          <hr class="gm-cat-{{ section.id }}__divider" aria-hidden="true">
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <p class="gm-cat-{{ section.id }}__subtitle">{{ section.settings.subtitle | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="gm-cat-{{ section.id }}__list">
+      {%- if section.settings.collections != blank -%}
+        {%- for collection in section.settings.collections -%}
+          <a
+            href="{{ collection.url }}"
+            class="gm-cat-{{ section.id }}__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            aria-label="{{ collection.title | escape }}"
+            {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}
+          >
+            <span class="gm-cat-{{ section.id }}__media">
+              {%- if collection.featured_image -%}
+                <img
+                  src="{{ collection.featured_image | image_url: width: 320 }}"
+                  srcset="{{ collection.featured_image | image_url: width: 320 }} 320w, {{ collection.featured_image | image_url: width: 480 }} 480w"
+                  sizes="{{ section.settings.image_size }}px"
+                  alt="{{ collection.featured_image.alt | default: collection.title | escape }}"
+                  class="gm-cat-{{ section.id }}__img"
+                  loading="lazy"
+                  width="320"
+                  height="320"
+                >
+              {%- else -%}
+                <span class="gm-cat-{{ section.id }}__placeholder">
+                  {{ 'collection-1' | placeholder_svg_tag }}
+                </span>
+              {%- endif -%}
+            </span>
+            <span class="gm-cat-{{ section.id }}__name">{{ collection.title | escape }}</span>
+          </a>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..6) -%}
+          <div class="gm-cat-{{ section.id }}__item">
+            <span class="gm-cat-{{ section.id }}__media">
+              <span class="gm-cat-{{ section.id }}__placeholder">
+                {{ 'collection-1' | placeholder_svg_tag }}
+              </span>
+            </span>
+            <span class="gm-cat-{{ section.id }}__name">Collection {{ i }}</span>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop by Category",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 52,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 34
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#221912"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show gold divider",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find something they'll actually love — browse by what they're into."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#5A4A3A"
+    },
+    {
+      "type": "header",
+      "content": "Collections"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collections",
+      "limit": 12
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 80,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Badge size",
+      "default": 130
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 12,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing between badges",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#E4D3AE"
+    },
+    {
+      "type": "color",
+      "id": "image_background",
+      "label": "Badge background",
+      "default": "#FAF5E8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color (hover / divider)",
+      "default": "#D4A853"
+    },
+    {
+      "type": "header",
+      "content": "Collection name"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Name size",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name color",
+      "default": "#221912"
+    },
+    {
+      "type": "header",
+      "content": "Hover effect"
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Hover lift distance",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by Category"
+    }
+  ]
+}
+{% endschema %}

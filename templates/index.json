@@ -60,64 +60,36 @@
         "mobile_content_alignment": "center"
       }
     },
-    "occasion-strip": {
-      "type": "collection-list",
-      "blocks": {
-        "col-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "birthday"
-          }
-        },
-        "col-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "father"
-          }
-        },
-        "col-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-for-him"
-          }
-        },
-        "col-3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-for-her"
-          }
-        },
-        "col-4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gifts-under-50"
-          }
-        },
-        "col-5": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tech-gadget-gifts"
-          }
-        },
-        "col-6": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "graduation"
-          }
-        }
-      },
-      "block_order": ["col-0", "col-1", "col-2", "col-3", "col-4", "col-5", "col-6"],
+    "shop-by-category": {
+      "type": "shop-by-occasion",
       "settings": {
-        "title": "Shop by Occasion",
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "columns_desktop": 7,
         "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "title": "Shop by Category",
+        "title_size": 34,
+        "title_color": "#221912",
+        "show_divider": true,
+        "subtitle": "Find something they'll actually love — browse by what they're into.",
+        "subtitle_size": 16,
+        "subtitle_color": "#5A4A3A",
+        "collections": [
+          "gifts-for-her",
+          "gifts-for-him",
+          "gifts-for-kids",
+          "tech-gadget-gifts",
+          "home-decor-lighting",
+          "gifts-under-50"
+        ],
+        "image_size": 130,
+        "spacing": 36,
+        "border_width": 1,
+        "border_color": "#E4D3AE",
+        "image_background": "#FAF5E8",
+        "accent_color": "#D4A853",
+        "name_size": 15,
+        "name_color": "#221912",
+        "hover_lift": 8,
+        "padding_top": 40,
+        "padding_bottom": 32
       }
     },
     "trust-strip": {
@@ -235,7 +207,7 @@
   "order": [
     "announcement-bar",
     "hero",
-    "occasion-strip",
+    "shop-by-category",
     "trust-strip",
     "featured-products",
     "email-capture"
